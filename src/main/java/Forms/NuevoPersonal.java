@@ -78,9 +78,11 @@ public class NuevoPersonal extends javax.swing.JFrame {
         jcEstado = new javax.swing.JComboBox<>();
         jcPuesto = new javax.swing.JComboBox<>();
         jcNivel = new javax.swing.JComboBox<>();
+        jbAutoGenerar = new javax.swing.JButton();
         jbGuardar = new javax.swing.JButton();
         jbLimpiar = new javax.swing.JButton();
         LabelFondo = new javax.swing.JLabel();
+        jbLimpiar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -111,13 +113,16 @@ public class NuevoPersonal extends javax.swing.JFrame {
         PanelLetrero.setLayout(PanelLetreroLayout);
         PanelLetreroLayout.setHorizontalGroup(
             PanelLetreroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Letrero1, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addGroup(PanelLetreroLayout.createSequentialGroup()
+                .addGap(281, 281, 281)
+                .addComponent(Letrero1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(304, 304, 304))
         );
         PanelLetreroLayout.setVerticalGroup(
             PanelLetreroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLetreroLayout.createSequentialGroup()
-                .addComponent(Letrero1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLetreroLayout.createSequentialGroup()
+                .addGap(0, 1, Short.MAX_VALUE)
+                .addComponent(Letrero1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         PanelNuevoPersonal.add(PanelLetrero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 80));
@@ -261,6 +266,8 @@ public class NuevoPersonal extends javax.swing.JFrame {
 
         jLabel8.setText("Nivel");
 
+        jtCodigo.setEnabled(false);
+
         jpClave.setText("jPasswordField1");
 
         jcDeduccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SNP", "SPP" }));
@@ -278,50 +285,69 @@ public class NuevoPersonal extends javax.swing.JFrame {
 
         jcNivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inicial", "Primaria", "Secundaria" }));
 
+        jbAutoGenerar.setText("AutoGenerar");
+        jbAutoGenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAutoGenerarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelAdministrativosLayout = new javax.swing.GroupLayout(PanelAdministrativos);
         PanelAdministrativos.setLayout(PanelAdministrativosLayout);
         PanelAdministrativosLayout.setHorizontalGroup(
             PanelAdministrativosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelAdministrativosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PanelAdministrativosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(PanelAdministrativosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelAdministrativosLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jbAutoGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(PanelAdministrativosLayout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jpClave))
-                    .addGroup(PanelAdministrativosLayout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jcCategoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(PanelAdministrativosLayout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jcDeduccion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(PanelAdministrativosLayout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jcEstado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(PanelAdministrativosLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jcPuesto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(PanelAdministrativosLayout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jcNivel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addGroup(PanelAdministrativosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelAdministrativosLayout.createSequentialGroup()
+                                .addGroup(PanelAdministrativosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(PanelAdministrativosLayout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(PanelAdministrativosLayout.createSequentialGroup()
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jpClave))
+                                    .addGroup(PanelAdministrativosLayout.createSequentialGroup()
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jcCategoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(PanelAdministrativosLayout.createSequentialGroup()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jcDeduccion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(PanelAdministrativosLayout.createSequentialGroup()
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jcEstado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(PanelAdministrativosLayout.createSequentialGroup()
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jcPuesto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(PanelAdministrativosLayout.createSequentialGroup()
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jcNivel, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(PanelAdministrativosLayout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         PanelAdministrativosLayout.setVerticalGroup(
             PanelAdministrativosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAdministrativosLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel7)
-                .addGap(57, 57, 57)
+                .addGap(45, 45, 45)
+                .addComponent(jbAutoGenerar)
+                .addGap(18, 18, 18)
                 .addGroup(PanelAdministrativosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -349,7 +375,7 @@ public class NuevoPersonal extends javax.swing.JFrame {
                 .addGroup(PanelAdministrativosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jcNivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         PanelNuevoPersonal.add(PanelAdministrativos, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 360, 430));
@@ -372,6 +398,14 @@ public class NuevoPersonal extends javax.swing.JFrame {
 
         LabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelNuevoPersonal.add(LabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 660));
+
+        jbLimpiar1.setText("LIMPIAR TODO");
+        jbLimpiar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbLimpiar1ActionPerformed(evt);
+            }
+        });
+        PanelNuevoPersonal.add(jbLimpiar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 540, 260, 40));
 
         getContentPane().add(PanelNuevoPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, 650));
 
@@ -484,6 +518,17 @@ public class NuevoPersonal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jbLimpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLimpiar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbLimpiar1ActionPerformed
+
+    private void jbAutoGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAutoGenerarActionPerformed
+        
+        String codigoautogenerado=jtextNombres.getText().charAt(0)+jtextApellidos.getText();
+        
+        jtCodigo.setText(codigoautogenerado.toLowerCase());        // TODO add your handling code here:
+    }//GEN-LAST:event_jbAutoGenerarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -560,8 +605,10 @@ public class NuevoPersonal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JButton jbAutoGenerar;
     private javax.swing.JButton jbGuardar;
     private javax.swing.JButton jbLimpiar;
+    private javax.swing.JButton jbLimpiar1;
     private javax.swing.JComboBox<String> jcCategoria;
     private javax.swing.JComboBox<String> jcDeduccion;
     private javax.swing.JComboBox<String> jcEstado;
