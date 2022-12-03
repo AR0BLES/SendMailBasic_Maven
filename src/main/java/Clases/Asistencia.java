@@ -20,7 +20,7 @@ String Totalasistencia;
 String HoraporAsistencia;
 String TotalHora;
 String Mes;
-
+String Alexis;
     public Asistencia(String codigo, String Nombre, String Apellido, String Asistencia, String Tardanza, String Falta, String Justificada, String Totalasistencia, String HoraporAsistencia, String TotalHora, String Mes) {
         this.codigo = codigo;
         this.Nombre = Nombre;
