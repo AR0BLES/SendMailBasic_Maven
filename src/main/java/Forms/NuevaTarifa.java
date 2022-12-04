@@ -163,9 +163,7 @@ public class NuevaTarifa extends javax.swing.JFrame {
         String Precio=  jtextPrecio.getText();
         String Categoria=  jtextCategoria.getText();
         
-      
-     
-            cTarifaCrud t =new cTarifaCrud();
+           cTarifaCrud t =new cTarifaCrud();
          //IdPersonal = h.ObtenerIdPersonal(conectar,jtextCodigoDocente.getText());
            Tarifa tarifa =new Tarifa(0,CodigoTarifa,Precio,Categoria);
            t.insertarTarifa(conectar, tarifa);
@@ -178,7 +176,6 @@ public class NuevaTarifa extends javax.swing.JFrame {
            
            p.ListarDatosTarifaDoc();
            p.setVisible(true);
-        // TODO add your handling code here:
     }//GEN-LAST:event_jbGuardarActionPerformed
 
     private void jtextCodigoTarifaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtextCodigoTarifaActionPerformed
