@@ -9,6 +9,7 @@ package Clases;
  * @author apsenior
  */
 public class Horario {
+    //Declaración de variables
     int IdPersonal;
     String HoraInicio;
     String HoraFin;
