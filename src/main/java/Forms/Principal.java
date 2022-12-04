@@ -341,7 +341,7 @@ public class Principal extends javax.swing.JFrame {
 
         PanelInicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LabelFondo1.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        LabelFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
         PanelInicio.add(LabelFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 640));
 
         jTabbedPane1.addTab("Inicio", PanelInicio);
@@ -431,7 +431,7 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelPersonal.add(jbActivar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 570, 110, 40));
 
-        LabelFondo2.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        LabelFondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
         PanelPersonal.add(LabelFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
 
         jTabbedPane1.addTab("Personal", PanelPersonal);
@@ -514,7 +514,7 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelTurno.add(jbEliminarHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 560, 120, 40));
 
-        LabelFondo3.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        LabelFondo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
         PanelTurno.add(LabelFondo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
 
         jTabbedPane1.addTab("Turno", PanelTurno);
@@ -580,7 +580,7 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelAsistencia.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, 140, 40));
 
-        LabelFondo4.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        LabelFondo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
         PanelAsistencia.add(LabelFondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
 
         jTabbedPane1.addTab("Asistencia", PanelAsistencia);
@@ -704,7 +704,7 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelTarifario.add(jEliminarTarifa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 540, 100, 40));
 
-        LabelFondo5.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        LabelFondo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
         PanelTarifario.add(LabelFondo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
 
         jTabbedPane1.addTab("Tarifario", PanelTarifario);
@@ -749,7 +749,7 @@ public class Principal extends javax.swing.JFrame {
 
         jcMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\LogoPrincipalColegio.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoPrincipalColegio.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -805,7 +805,7 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelPlanilla.add(jbGenerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 550, 260, 40));
 
-        LabelFondo6.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        LabelFondo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
         PanelPlanilla.add(LabelFondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
 
         jTabbedPane1.addTab("Planilla", PanelPlanilla);
@@ -871,7 +871,7 @@ public class Principal extends javax.swing.JFrame {
         });
         PanelBoleta.add(jbExportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 140, 40));
 
-        LabelFondo7.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        LabelFondo7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
         PanelBoleta.add(LabelFondo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
 
         jTabbedPane1.addTab("Boleta", PanelBoleta);

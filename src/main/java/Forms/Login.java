@@ -50,16 +50,17 @@ public class Login extends javax.swing.JFrame {
         PanelFondo1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\LogoPrincipalColegio.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoPrincipalColegio.png"))); // NOI18N
         PanelFondo1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 260, 260));
 
-        LabelFondo1.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\FondoLogin.png")); // NOI18N
+        LabelFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoLogin.png"))); // NOI18N
         PanelFondo1.add(LabelFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 550));
 
         PanelFondo2.setBackground(new java.awt.Color(255, 255, 255));
         PanelFondo2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LabelLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoLogin.png"))); // NOI18N
         PanelFondo2.add(LabelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 430, -1));
 
         Label1.setFont(new java.awt.Font("Britannic Bold", 1, 24)); // NOI18N

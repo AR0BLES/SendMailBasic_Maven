@@ -370,7 +370,7 @@ public class NuevoPersonal extends javax.swing.JFrame {
         });
         PanelNuevoPersonal.add(jbLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 540, 260, 40));
 
-        LabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        LabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
         PanelNuevoPersonal.add(LabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 660));
 
         getContentPane().add(PanelNuevoPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, 650));

@@ -51,7 +51,7 @@ public class NuevaTarifaDocente extends javax.swing.JFrame {
         PanelNuevoHorario = new javax.swing.JPanel();
         PanelLetrero = new javax.swing.JPanel();
         Letrero1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        PanelGris = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -98,25 +98,25 @@ public class NuevaTarifaDocente extends javax.swing.JFrame {
 
         PanelNuevoHorario.add(PanelLetrero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 80));
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelGris.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Código de docente");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 160, 20));
+        PanelGris.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 160, 20));
 
         jLabel3.setText("Código de tarifa");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 160, 20));
+        PanelGris.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 160, 20));
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\LogoPrincipalColegio.png")); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 270, 250));
-        jPanel1.add(jtextCodigoDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 180, 50));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoPrincipalColegio.png"))); // NOI18N
+        PanelGris.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 270, 250));
+        PanelGris.add(jtextCodigoDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 180, 50));
 
         jtextCodigoTarifa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtextCodigoTarifaActionPerformed(evt);
             }
         });
-        jPanel1.add(jtextCodigoTarifa, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 180, 50));
+        PanelGris.add(jtextCodigoTarifa, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 180, 50));
 
         jbGuardar.setText("GUARDAR");
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -124,14 +124,14 @@ public class NuevaTarifaDocente extends javax.swing.JFrame {
                 jbGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 260, 40));
+        PanelGris.add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 260, 40));
 
         jbLimpiar.setText("LIMPIAR");
-        jPanel1.add(jbLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 260, 40));
+        PanelGris.add(jbLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 260, 40));
 
-        PanelNuevoHorario.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 740, 440));
+        PanelNuevoHorario.add(PanelGris, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 740, 440));
 
-        LabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        LabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
         PanelNuevoHorario.add(LabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 660));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,13 +226,13 @@ public class NuevaTarifaDocente extends javax.swing.JFrame {
     private javax.swing.JLabel LabelFondo;
     private javax.swing.JLabel Letrero1;
     private javax.swing.JPanel PanelBlanco;
+    private javax.swing.JPanel PanelGris;
     private javax.swing.JPanel PanelLetrero;
     private javax.swing.JPanel PanelNuevoHorario;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbGuardar;
     private javax.swing.JButton jbLimpiar;
     private javax.swing.JTextField jtextCodigoDocente;

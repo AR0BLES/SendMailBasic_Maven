@@ -479,7 +479,7 @@
             <Component class="javax.swing.JLabel" name="LabelFondo1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -701,7 +701,7 @@
             <Component class="javax.swing.JLabel" name="LabelFondo2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -904,7 +904,7 @@
             <Component class="javax.swing.JLabel" name="LabelFondo3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -1103,7 +1103,7 @@
             <Component class="javax.swing.JLabel" name="LabelFondo4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -1393,7 +1393,7 @@
             <Component class="javax.swing.JLabel" name="LabelFondo5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -1602,7 +1602,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel4">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\LogoPrincipalColegio.png"/>
+                      <Image iconType="3" name="/Imagenes/LogoPrincipalColegio.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -1624,7 +1624,7 @@
             <Component class="javax.swing.JLabel" name="LabelFondo6">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -1750,7 +1750,7 @@
             <Component class="javax.swing.JLabel" name="LabelFondo7">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>

@@ -51,7 +51,7 @@ public class NuevoHorario extends javax.swing.JFrame {
         PanelNuevoHorario = new javax.swing.JPanel();
         PanelLetrero = new javax.swing.JPanel();
         Letrero1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        PanelGris = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -116,58 +116,58 @@ public class NuevoHorario extends javax.swing.JFrame {
 
         PanelNuevoHorario.add(PanelLetrero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 80));
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PanelGris.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Codigo Docente");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 20));
+        PanelGris.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 20));
 
         jLabel2.setText("Curso");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 160, 20));
+        PanelGris.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 160, 20));
 
         jLabel3.setText("Hora Inicio de Jornada");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 160, 20));
-        jPanel1.add(jtextCodigoDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 190, -1));
+        PanelGris.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 160, 20));
+        PanelGris.add(jtextCodigoDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 190, -1));
 
         jLabel4.setText("Hora Final de Jornada");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 160, 20));
-        jPanel1.add(jtextHoraFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 190, -1));
+        PanelGris.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 160, 20));
+        PanelGris.add(jtextHoraFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 190, -1));
 
         jLabel5.setText("Cantidad de Horas Semanales");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 160, 20));
-        jPanel1.add(jtextCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 190, -1));
-        jPanel1.add(jtextCantDiaLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 190, -1));
+        PanelGris.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 160, 20));
+        PanelGris.add(jtextCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 190, -1));
+        PanelGris.add(jtextCantDiaLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 190, -1));
 
         jLabel6.setText("Cantidad de Días Laborales");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 160, 20));
+        PanelGris.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 160, 20));
 
         jLabel7.setText("Días");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 37, 20));
+        PanelGris.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 37, 20));
 
         jCheckBox1.setText("Viernes");
-        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 85, -1));
+        PanelGris.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 85, -1));
 
         jCheckBox2.setText("Miercoles");
-        jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 85, -1));
+        PanelGris.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 85, -1));
 
         jCheckBox3.setText("Lunes");
-        jPanel1.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 85, -1));
+        PanelGris.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 85, -1));
 
         jCheckBox4.setText("Todos");
-        jPanel1.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 85, -1));
+        PanelGris.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 85, -1));
 
         jCheckBox5.setText("Jueves");
-        jPanel1.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 85, -1));
+        PanelGris.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 85, -1));
 
         jCheckBox6.setText("Martes");
-        jPanel1.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 85, -1));
+        PanelGris.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 85, -1));
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\LogoPrincipalColegio.png")); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 270, 250));
-        jPanel1.add(jtextHoraInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 190, -1));
-        jPanel1.add(jtextCantHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 190, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoPrincipalColegio.png"))); // NOI18N
+        PanelGris.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 270, 250));
+        PanelGris.add(jtextHoraInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 190, -1));
+        PanelGris.add(jtextCantHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 190, -1));
 
-        PanelNuevoHorario.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 740, 410));
+        PanelNuevoHorario.add(PanelGris, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 740, 410));
 
         jbLimpiar.setText("LIMPIAR TODO");
         jbLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -185,7 +185,7 @@ public class NuevoHorario extends javax.swing.JFrame {
         });
         PanelNuevoHorario.add(jbGuardarHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 260, 40));
 
-        LabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        LabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
         PanelNuevoHorario.add(LabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 660));
 
         getContentPane().add(PanelNuevoHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, 650));
@@ -287,6 +287,7 @@ String Dia="LUN,MAR";
     private javax.swing.JLabel LabelFondo;
     private javax.swing.JLabel Letrero1;
     private javax.swing.JPanel PanelBlanco;
+    private javax.swing.JPanel PanelGris;
     private javax.swing.JPanel PanelLetrero;
     private javax.swing.JPanel PanelNuevoHorario;
     private javax.swing.JButton jButton4;
@@ -304,7 +305,6 @@ String Dia="LUN,MAR";
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbGuardarHorario;
     private javax.swing.JButton jbLimpiar;
     private javax.swing.JTextField jtextCantDiaLab;
