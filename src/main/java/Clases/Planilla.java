@@ -6,9 +6,9 @@ package Clases;
 //Esta clase está referida al caso de uso de exportar planilla en excel
 public class Planilla {
     //Variables o Atributos
-    String CodigoPersonal;
-    String Mes;
-    String Anio;
+    String CodigoPersonal; //Código del personal
+    String Mes; //Mes de la planilla a exportar
+    String Anio; //Año de la planilla a exportar
     
     //Constructor
     public Planilla(String CodigoPersonal, String Mes, String Anio) {

@@ -6,14 +6,14 @@ package Clases;
 //Esta clase está referida al caso de uso de Registrar Tarifa
 public class Tarifa {
     //Variables o Atributos
-    int IdTarifa;
-    String Codigo;
-    String Precio;
-    String Categoria;
+    int IdTarifa; 
+    String Codigo; //Código de Tarifa
+    String Precio; //Precio por hora
+    String Categoria; //Categoría de la tarifa
     
     //Constructor
     public Tarifa(int IdTarifa, String Codigo, String Precio, String Categoria) {
-        this.IdTarifa = IdTarifa;
+        this.IdTarifa = IdTarifa; 
         this.Codigo = Codigo;
         this.Precio = Precio;
         this.Categoria = Categoria;
