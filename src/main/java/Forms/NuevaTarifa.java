@@ -159,20 +159,23 @@ public class NuevaTarifa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
-              String CodigoTarifa= jtextCodigoTarifa.getText();
+        String CodigoTarifa= jtextCodigoTarifa.getText();
         String Precio=  jtextPrecio.getText();
         String Categoria=  jtextCategoria.getText();
         
       
      
             cTarifaCrud t =new cTarifaCrud();
-         //  IdPersonal = h.ObtenerIdPersonal(conectar,jtextCodigoDocente.getText());
+         //IdPersonal = h.ObtenerIdPersonal(conectar,jtextCodigoDocente.getText());
            Tarifa tarifa =new Tarifa(0,CodigoTarifa,Precio,Categoria);
            t.insertarTarifa(conectar, tarifa);
+           
            Principal p =new Principal();
            NuevaTarifa nt=new NuevaTarifa();
+           
            nt.setVisible(false);
            p.ListarDatosTarifa();
+           
            p.ListarDatosTarifaDoc();
            p.setVisible(true);
         // TODO add your handling code here:

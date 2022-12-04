@@ -177,9 +177,6 @@
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\LogoPrincipalColegio.png"/>
-                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -230,11 +227,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="LabelFondo">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
-            </Property>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="0" y="0" width="-1" height="660"/>

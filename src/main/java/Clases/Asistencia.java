@@ -1,6 +1,7 @@
 package Clases;
 public class Asistencia {
 //Variables
+
 String codigo;
 String Nombre;
 String Apellido;
