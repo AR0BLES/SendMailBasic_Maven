@@ -26,5 +26,7 @@ String Mes;
         this.HoraporAsistencia = HoraporAsistencia;
         this.TotalHora = TotalHora;
         this.Mes = Mes;
+        
+        //Hola Mundo
     }
 }
