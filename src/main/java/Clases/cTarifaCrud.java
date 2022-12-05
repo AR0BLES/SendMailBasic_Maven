@@ -1,9 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Clases;
+// @author Jose Chuchon
 
+//Importacion de todos los paquetes para el funcionamiento de la clase 
+
+package Clases;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,13 +11,13 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author apsenior
- */
+//Creacion  de  una clase 
 public class cTarifaCrud {
     public  void insertarTarifa(Connection conexion, Tarifa tarifa){
     String sql ="INSERT INTO Tarifa VALUES (?,?,?);";
+    
+    // Se usa el try-catch para  detectar y controlar una excepción de codigo
+    //para manejar fragmentos de código que son propensos a fallar
     try{
         PreparedStatement statement= conexion.prepareStatement(sql);
         statement.setString(1, tarifa.Codigo);
