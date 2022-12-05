@@ -25,17 +25,21 @@ public class cTarifaCrud {
         //Uso de los varibales de la clase (TarifaDoc)
         statement.setString(1, tarifa.Codigo);
         statement.setString(2, tarifa.Precio);
-        statement.setString(3, tarifa.Categoria);  
+        statement.setString(3, tarifa.Categoria); 
         
+        //Creacion de varibale para agregar nuevos datos en la tabla
         int registroAdd=statement.executeUpdate();
         
+        //uso de una condicion cuando el registro sea mayor que cero
         if (registroAdd>0){
           System.out.println("OK");
+          //Imprimir un mensaje cuando el registro sea exitoso
            JOptionPane.showMessageDialog(null,"Ok, Registro Correcto"); 
         }
         
         }catch(SQLException e){
          e.printStackTrace();
+         //Imprimir un mensaje cuando el registro no se registre
          JOptionPane.showMessageDialog(null,"error"+e.toString()); 
         }
     }
