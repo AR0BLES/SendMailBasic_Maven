@@ -20,6 +20,7 @@ public class cTarifaCrud {
     //para manejar fragmentos de código que son propensos a fallar
     try{
         PreparedStatement statement= conexion.prepareStatement(sql);
+        //Uso de los varibales de la clase (TarifaDoc)
         statement.setString(1, tarifa.Codigo);
         statement.setString(2, tarifa.Precio);
         statement.setString(3, tarifa.Categoria);  
@@ -36,8 +37,11 @@ public class cTarifaCrud {
          JOptionPane.showMessageDialog(null,"error"+e.toString()); 
         }
     }
+    //Creacion de un modificador public con sus parametros para almacenar en sql
+    //Para insertar los datos en la tabla de Jframe
     public  DefaultTableModel ListarTarifa(Connection conexion){
         DefaultTableModel modelo=new  DefaultTableModel();
+        //columnas con sus nombres de la Tabla ListaTarifa
         modelo.addColumn("IdTarifa");
         modelo.addColumn("Codigo");
         modelo.addColumn("Precio");
@@ -60,7 +64,7 @@ public class cTarifaCrud {
             }
    return modelo;        
    } 
-    
+    //Creacion de un modificador public con sus parametros para almacenar en sql
       public  void eliminarTarifa(Connection conexion, String IdUsuario){
            
     try{
