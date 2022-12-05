@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 /**
  *
- * @author apsenior
+ * @author Jose Chuchon
  */
 public class conexion 
 {
