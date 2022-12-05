@@ -13,6 +13,8 @@ import javax.swing.table.DefaultTableModel;
 
 //Creacion  de  una clase 
 public class cTarifaCrud {
+    //Creacion de un modificador public con sus parametros para almacenar en sql
+    //con los variables donde se va almacenar los datos correspondientes
     public  void insertarTarifa(Connection conexion, Tarifa tarifa){
     String sql ="INSERT INTO Tarifa VALUES (?,?,?);";
     
@@ -51,15 +53,19 @@ public class cTarifaCrud {
             CallableStatement cmd=conexion.prepareCall("{CALL SP_LISTAR_TARIFA}");
             ResultSet rs= cmd.executeQuery();
             while(rs.next()){
+                //Creacion de un Array que nos permite almacenar 
+                //datos ingresados en la tabla
                Object dato []= new Object[4];
              for (int i=0;i<4;i++){
                 dato[i]=rs.getString(i+1);
              }
+             //guardar los datos ingresados en la tabla para su visualizacion
               modelo.addRow(dato);
             }
 
             }catch(SQLException e){
              e.printStackTrace();
+             //Imprimir un mensaje si los datos no se guardan 
              JOptionPane.showMessageDialog(null,"error"+e.toString()); 
             }
    return modelo;        
@@ -68,6 +74,7 @@ public class cTarifaCrud {
       public  void eliminarTarifa(Connection conexion, String IdUsuario){
            
     try{
+        //Sentecia de sql para llamar un dato alamacenado en la base de datos
          CallableStatement cmd=conexion.prepareCall("{call SP_ELIMINAR_TARIFA(?)}");
             cmd.setString(1, IdUsuario);
             ResultSet rs= cmd.executeQuery();
@@ -75,6 +82,7 @@ public class cTarifaCrud {
         
         }catch(SQLException e){
          e.printStackTrace();
+          //Imprimir un mensaje si los datos no se guardan 
          JOptionPane.showMessageDialog(null,"error"+e.toString()); 
         }
     }
