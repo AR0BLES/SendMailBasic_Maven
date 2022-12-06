@@ -1,15 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+// @author Jose Chuchon
+//Importacion de todos los paquetes para el funcionamiento de la clase  
 package Clases;
 import java.sql.*;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
-/**
- *
- * @author Jose Chuchon
- */
+
+
 public class conexion 
 {
 
