@@ -60,7 +60,6 @@ public class NuevoPersonal extends javax.swing.JFrame {
         jtextHijos = new javax.swing.JTextField();
         jtextBancaria = new javax.swing.JTextField();
         jtextCorreo = new javax.swing.JTextField();
-        jdateFechaNacimiento = new com.toedter.calendar.JDateChooser();
         PanelBlanco2 = new javax.swing.JPanel();
         PanelAdministrativos = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -81,6 +80,7 @@ public class NuevoPersonal extends javax.swing.JFrame {
         jbGuardar = new javax.swing.JButton();
         jbLimpiar = new javax.swing.JButton();
         LabelFondo = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -134,11 +134,11 @@ public class NuevoPersonal extends javax.swing.JFrame {
 
         LabelNacimiento.setText("Fecha de Nacimiento");
 
-        LabelHijos.setText("NÂ° de Hijos");
+        LabelHijos.setText("N° de Hijos");
 
         LabelBancaria.setText("Cuenta Bancaria");
 
-        LabelCorreo.setText("Correo ElectrÃ³nico");
+        LabelCorreo.setText("Correo Electrónico");
 
         jtextNombres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,8 +186,7 @@ public class NuevoPersonal extends javax.swing.JFrame {
                     .addComponent(jtextDNI)
                     .addComponent(jtextCorreo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                     .addComponent(jtextHijos, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                    .addComponent(jtextBancaria, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                    .addComponent(jdateFechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jtextBancaria, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
                 .addGap(17, 17, 17))
         );
         PanelPersonalesLayout.setVerticalGroup(
@@ -208,10 +207,8 @@ public class NuevoPersonal extends javax.swing.JFrame {
                     .addComponent(LabelDNI)
                     .addComponent(jtextDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(PanelPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelNacimiento)
-                    .addComponent(jdateFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addComponent(LabelNacimiento)
+                .addGap(20, 20, 20)
                 .addGroup(PanelPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelHijos)
                     .addComponent(jtextHijos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -223,7 +220,7 @@ public class NuevoPersonal extends javax.swing.JFrame {
                 .addGroup(PanelPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelCorreo)
                     .addComponent(jtextCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         PanelNuevoPersonal.add(PanelPersonales, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 360, 430));
@@ -238,22 +235,22 @@ public class NuevoPersonal extends javax.swing.JFrame {
         );
         PanelBlanco2Layout.setVerticalGroup(
             PanelBlanco2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
+            .addGap(0, 150, Short.MAX_VALUE)
         );
 
-        PanelNuevoPersonal.add(PanelBlanco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 40, 160));
+        PanelNuevoPersonal.add(PanelBlanco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 40, 150));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("DATOS ADMINISTRATIVOS");
 
-        jLabel1.setText("CÃ³digo");
+        jLabel1.setText("Código");
 
-        jLabel2.setText("ContraseÃ±a");
+        jLabel2.setText("Contraseña");
 
-        jLabel3.setText("CategorÃ­a");
+        jLabel3.setText("Categoría");
 
-        jLabel4.setText("DeducciÃ³n");
+        jLabel4.setText("Deducción");
 
         jLabel5.setText("Estado");
 
@@ -369,9 +366,10 @@ public class NuevoPersonal extends javax.swing.JFrame {
             }
         });
         PanelNuevoPersonal.add(jbLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 540, 260, 40));
-
-        LabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelNuevoPersonal.add(LabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 660));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
+        PanelNuevoPersonal.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(PanelNuevoPersonal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, 650));
 
@@ -560,6 +558,7 @@ public class NuevoPersonal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JButton jbGuardar;
     private javax.swing.JButton jbLimpiar;
     private javax.swing.JComboBox<String> jcCategoria;
@@ -567,7 +566,6 @@ public class NuevoPersonal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jcEstado;
     private javax.swing.JComboBox<String> jcNivel;
     private javax.swing.JComboBox<String> jcPuesto;
-    private com.toedter.calendar.JDateChooser jdateFechaNacimiento;
     private javax.swing.JPasswordField jpClave;
     private javax.swing.JTextField jtCodigo;
     private javax.swing.JTextField jtextApellidos;
