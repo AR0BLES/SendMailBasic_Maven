@@ -60,6 +60,7 @@ public class NuevoPersonal extends javax.swing.JFrame {
         jtextHijos = new javax.swing.JTextField();
         jtextBancaria = new javax.swing.JTextField();
         jtextCorreo = new javax.swing.JTextField();
+        jdateFechaNacimiento = new com.toedter.calendar.JDateChooser();
         PanelBlanco2 = new javax.swing.JPanel();
         PanelAdministrativos = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -186,7 +187,8 @@ public class NuevoPersonal extends javax.swing.JFrame {
                     .addComponent(jtextDNI)
                     .addComponent(jtextCorreo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                     .addComponent(jtextHijos, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                    .addComponent(jtextBancaria, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))
+                    .addComponent(jtextBancaria, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                    .addComponent(jdateFechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(17, 17, 17))
         );
         PanelPersonalesLayout.setVerticalGroup(
@@ -207,8 +209,10 @@ public class NuevoPersonal extends javax.swing.JFrame {
                     .addComponent(LabelDNI)
                     .addComponent(jtextDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(LabelNacimiento)
-                .addGap(20, 20, 20)
+                .addGroup(PanelPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelNacimiento)
+                    .addComponent(jdateFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
                 .addGroup(PanelPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelHijos)
                     .addComponent(jtextHijos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -566,6 +570,7 @@ public class NuevoPersonal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jcEstado;
     private javax.swing.JComboBox<String> jcNivel;
     private javax.swing.JComboBox<String> jcPuesto;
+    private com.toedter.calendar.JDateChooser jdateFechaNacimiento;
     private javax.swing.JPasswordField jpClave;
     private javax.swing.JTextField jtCodigo;
     private javax.swing.JTextField jtextApellidos;
