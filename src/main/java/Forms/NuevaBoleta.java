@@ -57,6 +57,7 @@ public class NuevaBoleta extends javax.swing.JFrame {
         jTextField11 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         LabelFondo = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -84,7 +85,9 @@ public class NuevaBoleta extends javax.swing.JFrame {
         PanelLetrero.setLayout(PanelLetreroLayout);
         PanelLetreroLayout.setHorizontalGroup(
             PanelLetreroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Letrero1, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addGroup(PanelLetreroLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(Letrero1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelLetreroLayout.setVerticalGroup(
             PanelLetreroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,7 +114,7 @@ public class NuevaBoleta extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 160, 20));
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 190, -1));
 
-        jLabel5.setText("Mes - A帽o facturado");
+        jLabel5.setText("Mes - A駉 facturado");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 160, 20));
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 190, -1));
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 190, -1));
@@ -120,7 +123,6 @@ public class NuevaBoleta extends javax.swing.JFrame {
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 140, 160, 20));
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\LogoPrincipalColegio.png")); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 270, 250));
 
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
@@ -134,13 +136,13 @@ public class NuevaBoleta extends javax.swing.JFrame {
         jLabel9.setText("Seguro");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
 
-        jLabel10.setText("Descripci贸n de deducci贸n");
+        jLabel10.setText("Descripci髇 de deducci髇");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
-        jLabel11.setText("Monto de deducci贸n");
+        jLabel11.setText("Monto de deducci髇");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
-        jLabel12.setText("Bonificaci贸n");
+        jLabel12.setText("Bonificaci髇");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
 
         jLabel13.setText("Salario Final");
@@ -166,9 +168,10 @@ public class NuevaBoleta extends javax.swing.JFrame {
             }
         });
         PanelNuevoHorario.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 580, 260, 40));
-
-        LabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelNuevoHorario.add(LabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 660));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
+        PanelNuevoHorario.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -267,6 +270,7 @@ public class NuevaBoleta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
