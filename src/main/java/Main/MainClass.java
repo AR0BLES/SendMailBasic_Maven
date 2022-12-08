@@ -1,5 +1,5 @@
 package Main;
-import Forms.Login;
+import FramesAdministrador.Login;
 public class MainClass {
     public static void main(String[] args) {
         Login frm = new Login();
