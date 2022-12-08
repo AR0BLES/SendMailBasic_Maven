@@ -75,6 +75,7 @@ public class NuevoHorario extends javax.swing.JFrame {
         jbLimpiar = new javax.swing.JButton();
         jbGuardarHorario = new javax.swing.JButton();
         LabelFondo = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -137,10 +138,10 @@ public class NuevoHorario extends javax.swing.JFrame {
         jPanel1.add(jtextCurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 190, -1));
         jPanel1.add(jtextCantDiaLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 190, -1));
 
-        jLabel6.setText("Cantidad de DÃ­as Laborales");
+        jLabel6.setText("Cantidad de Días Laborales");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 160, 20));
 
-        jLabel7.setText("DÃ­as");
+        jLabel7.setText("Días");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 37, 20));
 
         jCheckBox1.setText("Viernes");
@@ -162,7 +163,7 @@ public class NuevoHorario extends javax.swing.JFrame {
         jPanel1.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 85, -1));
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\LogoPrincipalColegio.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoPrincipalColegio.png"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 270, 250));
         jPanel1.add(jtextHoraInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 190, -1));
         jPanel1.add(jtextCantHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 190, -1));
@@ -184,9 +185,10 @@ public class NuevoHorario extends javax.swing.JFrame {
             }
         });
         PanelNuevoHorario.add(jbGuardarHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 260, 40));
-
-        LabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelNuevoHorario.add(LabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 660));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
+        PanelNuevoHorario.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, -1));
 
         getContentPane().add(PanelNuevoHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, 650));
 
@@ -304,6 +306,7 @@ String Dia="LUN,MAR";
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbGuardarHorario;
     private javax.swing.JButton jbLimpiar;
