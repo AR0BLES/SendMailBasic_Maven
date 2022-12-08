@@ -47,7 +47,7 @@ public class cGenerarPdf2 {
             //g.drawImage(img1.getImage(), 200, 250, 200, 200, null);
             
             Font font2 = new Font("Tahoma", Font.PLAIN, 10);
-            Font font3 = new Font("Tahoma", Font.PLAIN, 14);
+            Font font3 = new Font("Tahoma", Font.BOLD, 11);
             g.setFont(font2);
             g.setColor(Color.BLACK);
             
@@ -61,43 +61,58 @@ public class cGenerarPdf2 {
              g.drawString("Categoria: ", 40, 190);
             g.drawString(boleta.Categoria, 160, 190);
             
-             g.drawString("Monto Categoria: ", 40, 210);
-            g.drawString(boleta.MontoDescporCategoria, 160, 210);
+            g.drawString("Costo por Hora: ", 40, 210);
+            g.drawString(boleta.SueldoxHora,160, 210);
             
-              g.drawString("Hora Dictadas: ", 40, 230);
-            g.drawString(boleta.HorasDictadas, 160, 230);
-            
-              g.drawString("Bonificación ", 40, 250);
-            g.drawString(boleta.TipoBonificacion, 160, 250);
-            
-               g.drawString("Seguro Salud ", 40, 270);
-            g.drawString(boleta.SeguroSalud, 160, 270);
-            
+     
             //columna 2
-             g.drawString("Deduccion: ", 340, 150);
-            g.drawString(boleta.Deduccion, 440, 150);
+             g.drawString("Nivel: ", 340, 150);
+            g.drawString(boleta.Nivel, 440, 150);
             
-            g.drawString("Monto Deduccion: ", 340, 170);
-            g.drawString(boleta.MontoDescporSeguro, 440, 170);
+             g.drawString("Deduccion: ", 340, 170);
+            g.drawString(boleta.Deduccion, 440, 170);
             
-             g.drawString("Nivel: ", 340, 190);
-            g.drawString(boleta.Nivel, 440, 190);
             
-             g.drawString("Costo por Hora: ", 340, 210);
-            g.drawString(boleta.SueldoxHora, 440, 210);
+              g.drawString("Bonificación ", 340, 190);
+            g.drawString(boleta.TipoBonificacion, 440, 190);
             
-            int SueldoMes=Integer.parseInt(boleta.SueldoxHora)*Integer.parseInt(boleta.HorasDictadas);
-            
-            g.drawString("Sueldo Bruto: ", 340, 230);
-            g.drawString(String.valueOf(SueldoMes),440, 230);
-            
-             g.drawString("Monto Bonificación: ", 340, 250);
-            g.drawString(boleta.MontoBonificacion, 440, 250);
+             g.drawString("Hora Dictadas: ", 340, 210);
+            g.drawString(boleta.HorasDictadas, 440, 210);
             
             g.setFont(font3);
+            g.setColor(Color.BLACK);
+            g.drawString("Ingresos", 40, 240);
+            g.drawString("Egresos", 220, 240);
+            g.drawString("Aporte del Empleador",400, 240);
+            
+            int SueldoMes=Integer.parseInt(boleta.SueldoxHora)*Integer.parseInt(boleta.HorasDictadas);
+            g.setFont(font2);
+            g.setColor(Color.BLACK);
+            g.drawString("Sueldo Bruto: ", 40, 260);
+            g.drawString(String.valueOf(SueldoMes),140, 260);
+            
+               
+             g.drawString("Monto Bonificación: ", 40, 280);
+            g.drawString(boleta.MontoBonificacion, 140, 280);
+            
+           g.drawString("Monto Deduccion: ", 220, 260);
+            g.drawString(boleta.MontoDescporSeguro, 320, 260);
+            
+              g.drawString("Monto Categoria: ", 220, 280);
+            g.drawString(boleta.MontoDescporCategoria, 320, 280);
+       
+               g.drawString("Seguro Salud ", 400, 260);
+            g.drawString(boleta.SeguroSalud, 500, 260);
+            
+            
+            
+            
+           
+         
+            g.setFont(font3);
             g.setColor(Color.red);
-             g.drawString("Monto Neto ", 340, 270);
-            g.drawString(boleta.SueldoNeto, 440, 270);
+             g.drawString("Monto Neto ", 350, 320);
+            g.drawString(boleta.SueldoNeto, 450, 320);
             
             //firma
            g.setFont(font2);
@@ -122,9 +137,6 @@ public class cGenerarPdf2 {
 
         // step 5: we close the document
         document.close();
-
-        JOptionPane.showMessageDialog(null, 
-                "Se creo el archivo Boleta.pdf en la carpeta del proyecto");
     }
 
    // public static void main(String[] args) {

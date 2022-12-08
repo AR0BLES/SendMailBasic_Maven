@@ -10,9 +10,12 @@
 package Forms;
 
 import Clases.Boleta;
+import Clases.ControladorExcel;
 import Clases.EnviarCorreo;
 import Clases.ExportarExcel;
+import Clases.ModeloExcel;
 import Clases.Planilla;
+import Clases.cAsistenciaDetalleCrud;
 import Clases.cBoletaCrud;
 import Clases.cGenerarPdf2;
 import Clases.cHorarioCrud;
@@ -92,6 +95,7 @@ public class Principal extends javax.swing.JFrame {
         ListarDatosHorario();
         ListarDatosTarifa();
         ListarDatosBoleta();
+        ListarAsistenciaDetalle();
     }
            conexion con= new conexion();
        Connection conectar=con.establecerConexion();    
@@ -117,6 +121,11 @@ public class Principal extends javax.swing.JFrame {
        cBoletaCrud bc = new cBoletaCrud();
        jtBoleta.setModel(bc.ListarBoleta(conectar));
     }
+        void ListarAsistenciaDetalle(){
+       cAsistenciaDetalleCrud p = new cAsistenciaDetalleCrud();
+       jAsistencia.setModel(p.ListarAsistenciaDetalle(conectar));
+    }
+      
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -166,13 +175,14 @@ public class Principal extends javax.swing.JFrame {
         LabelFondo3 = new javax.swing.JLabel();
         PanelAsistencia = new javax.swing.JPanel();
         PanelLetrero3 = new javax.swing.JPanel();
-        Letrero3 = new javax.swing.JLabel();
+        btnRecargar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jAsistencia = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         LabelFondo4 = new javax.swing.JLabel();
+        Letrero3 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
         PanelTarifario = new javax.swing.JPanel();
         PanelLetrero4 = new javax.swing.JPanel();
         Letrero4 = new javax.swing.JLabel();
@@ -206,6 +216,7 @@ public class Principal extends javax.swing.JFrame {
         jtBoleta = new javax.swing.JTable();
         jbEnviarBoleta = new javax.swing.JButton();
         jbExportar = new javax.swing.JButton();
+        EnviarTodos = new javax.swing.JButton();
         LabelFondo7 = new javax.swing.JLabel();
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
@@ -528,23 +539,28 @@ public class Principal extends javax.swing.JFrame {
 
         PanelLetrero3.setBackground(new java.awt.Color(0, 2, 17));
 
-        Letrero3.setFont(new java.awt.Font("Perpetua Titling MT", 1, 24)); // NOI18N
-        Letrero3.setForeground(new java.awt.Color(255, 255, 255));
-        Letrero3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Letrero3.setText("ASISTENCIAS");
+        btnRecargar.setText("Recargar");
+        btnRecargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecargarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelLetrero3Layout = new javax.swing.GroupLayout(PanelLetrero3);
         PanelLetrero3.setLayout(PanelLetrero3Layout);
         PanelLetrero3Layout.setHorizontalGroup(
             PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Letrero3, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLetrero3Layout.createSequentialGroup()
+                .addContainerGap(685, Short.MAX_VALUE)
+                .addComponent(btnRecargar)
+                .addGap(58, 58, 58))
         );
         PanelLetrero3Layout.setVerticalGroup(
             PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLetrero3Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(Letrero3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(PanelLetrero3Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(btnRecargar)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         PanelAsistencia.add(PanelLetrero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 70));
@@ -575,18 +591,29 @@ public class Principal extends javax.swing.JFrame {
         PanelAsistencia.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 130, -1));
 
         jButton8.setText("Cargar");
-        PanelAsistencia.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 560, 140, 40));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        PanelAsistencia.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 540, 140, 40));
 
-        jButton9.setText("Importar");
+        LabelFondo4.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        PanelAsistencia.add(LabelFondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
+
+        Letrero3.setFont(new java.awt.Font("Perpetua Titling MT", 1, 24)); // NOI18N
+        Letrero3.setForeground(new java.awt.Color(255, 255, 255));
+        Letrero3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Letrero3.setText("ASISTENCIAS");
+        PanelAsistencia.add(Letrero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 808, 46));
+
+        jButton9.setText("Cargar");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
-        PanelAsistencia.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, 140, 40));
-
-        LabelFondo4.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
-        PanelAsistencia.add(LabelFondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
+        PanelAsistencia.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 140, 40));
 
         jTabbedPane1.addTab("Asistencia", PanelAsistencia);
 
@@ -828,7 +855,9 @@ public class Principal extends javax.swing.JFrame {
         PanelLetrero6.setLayout(PanelLetrero6Layout);
         PanelLetrero6Layout.setHorizontalGroup(
             PanelLetrero6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Letrero6, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addGroup(PanelLetrero6Layout.createSequentialGroup()
+                .addComponent(Letrero6, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
+                .addGap(152, 152, 152))
         );
         PanelLetrero6Layout.setVerticalGroup(
             PanelLetrero6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -866,7 +895,7 @@ public class Principal extends javax.swing.JFrame {
                 jbEnviarBoletaActionPerformed(evt);
             }
         });
-        PanelBoleta.add(jbEnviarBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 550, 140, 40));
+        PanelBoleta.add(jbEnviarBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 550, 140, 40));
 
         jbExportar.setText("Exportar");
         jbExportar.addActionListener(new java.awt.event.ActionListener() {
@@ -874,7 +903,15 @@ public class Principal extends javax.swing.JFrame {
                 jbExportarActionPerformed(evt);
             }
         });
-        PanelBoleta.add(jbExportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 140, 40));
+        PanelBoleta.add(jbExportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 550, 140, 40));
+
+        EnviarTodos.setText("Enviar Todos");
+        EnviarTodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EnviarTodosActionPerformed(evt);
+            }
+        });
+        PanelBoleta.add(EnviarTodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 550, 116, 40));
 
         LabelFondo7.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelBoleta.add(LabelFondo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
@@ -886,10 +923,6 @@ public class Principal extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jbCrearHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCrearHorarioActionPerformed
        //Poner Formulario Visible
@@ -943,6 +976,8 @@ public class Principal extends javax.swing.JFrame {
        //Enviar Boleta de pago
         Boleta b = new Boleta(NombresBoleta,ApellidosBoleta,SueldoxHoraBoleta,HorasDictadasBoleta,MontoDescporCategoriaBoleta,MontoDescporSeguroBoleta,MontoBonificacionBoleta,SueldoNetoBoleta,CuentaBancariaBoleta,TipoBonificacionBoleta,NivelBoleta,SeguroSaludBoleta,CodigoUsuarioBoleta,MesBoleta,AnioBoleta,CategoriaBoleta,DeduccionBoleta,CorreoDestinoBoleta);
         cGenerarPdf2 c = new cGenerarPdf2();
+          JOptionPane.showMessageDialog(null, 
+                "Se creo el archivo Boleta.pdf en la carpeta del proyecto");
          c.generar(b);
          EnviarCorreo e = new EnviarCorreo();
           try {
@@ -975,7 +1010,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jbActivarActionPerformed
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
-        
+
+            
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void jtPersonalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtPersonalMouseClicked
@@ -1084,6 +1120,68 @@ public class Principal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        ModeloExcel ModeloEX=new ModeloExcel();
+        VistaExcel VistaEX=new VistaExcel();
+        ControladorExcel ControlExcel=new ControladorExcel(VistaEX, ModeloEX);  
+        ListarAsistenciaDetalle();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
+        // TODO add your handling code here:
+        ListarAsistenciaDetalle();
+    }//GEN-LAST:event_btnRecargarActionPerformed
+
+    private void EnviarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarTodosActionPerformed
+             if(jtBoleta.getRowCount()>0){
+          for (int i=0;i<jtBoleta.getRowCount();i++){
+            String NombresBoleta=    String.valueOf(jtBoleta.getValueAt(i,0));
+            String ApellidosBoleta=    String.valueOf( jtBoleta.getValueAt(i,1));
+            String SueldoxHoraBoleta=    String.valueOf(jtBoleta.getValueAt(i,2));
+            String HorasDictadasBoleta=    String.valueOf(jtBoleta.getValueAt(i,3));
+            String MontoDescporCategoriaBoleta=    String.valueOf(jtBoleta.getValueAt(i,4));
+            String MontoDescporSeguroBoleta=    String.valueOf(jtBoleta.getValueAt(i,5));
+            String MontoBonificacionBoleta=    String.valueOf(jtBoleta.getValueAt(i,6));
+            String SueldoNetoBoleta=    String.valueOf(jtBoleta.getValueAt(i,7));
+            String CuentaBancariaBoleta=    String.valueOf(jtBoleta.getValueAt(i,8));
+            String TipoBonificacionBoleta=    String.valueOf(jtBoleta.getValueAt(i,9));
+            String NivelBoleta=    String.valueOf(jtBoleta.getValueAt(i,10));
+            String SeguroSaludBoleta=    String.valueOf(jtBoleta.getValueAt(i,11));
+             String CodigoUsuarioBoleta=    String.valueOf(jtBoleta.getValueAt(i,12));
+            String MesBoleta=    String.valueOf(jtBoleta.getValueAt(i,13));
+            String AnioBoleta=    String.valueOf(jtBoleta.getValueAt(i,14));
+            String CategoriaBoleta=    String.valueOf(jtBoleta.getValueAt(i,15));
+            String DeduccionBoleta=    String.valueOf(jtBoleta.getValueAt(i,16));
+            String CorreoDestinoBoleta=    String.valueOf(jtBoleta.getValueAt(i,17));
+//JOptionPane.showMessageDialog(this, codigo+Nombre+Apellido+Asistencia+Tardanza+Falta+Justificada+TotalAsistencia+HoraporAsistencia+TotalHora+Mes+Anio);
+                if (CodigoUsuarioBoleta!="null"){
+                Boleta b = new Boleta(NombresBoleta,ApellidosBoleta,SueldoxHoraBoleta,HorasDictadasBoleta,
+                        MontoDescporCategoriaBoleta,MontoDescporSeguroBoleta,MontoBonificacionBoleta,
+                        SueldoNetoBoleta,CuentaBancariaBoleta,TipoBonificacionBoleta,NivelBoleta,SeguroSaludBoleta,
+                        CodigoUsuarioBoleta,MesBoleta,AnioBoleta,CategoriaBoleta,DeduccionBoleta,CorreoDestinoBoleta);
+                    cGenerarPdf2 c = new cGenerarPdf2();
+                     c.generar(b);
+                     EnviarCorreo e = new EnviarCorreo();
+                      try {
+                          e.main(CorreoDestinoBoleta);
+                          // TODO add your handling code here:
+                      } catch (MessagingException ex) {
+                          Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                      } 
+                
+       }
+      
+          }
+           JOptionPane.showMessageDialog(null,"Correos enviados con éxito");
+      }else{
+      JOptionPane.showMessageDialog(this, "La tabla se encuentra vacia");
+      }
+    }//GEN-LAST:event_EnviarTodosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1121,6 +1219,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton EnviarTodos;
     private javax.swing.JLabel LabelFondo1;
     private javax.swing.JLabel LabelFondo2;
     private javax.swing.JLabel LabelFondo3;
@@ -1148,6 +1247,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel PanelPlanilla;
     private javax.swing.JPanel PanelTarifario;
     private javax.swing.JPanel PanelTurno;
+    private javax.swing.JButton btnRecargar;
     private javax.swing.JTable jAsistencia;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
