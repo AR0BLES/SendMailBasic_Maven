@@ -43,6 +43,7 @@ public class Login extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jpwClave = new javax.swing.JPasswordField();
         jtextUsuario = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -50,10 +51,10 @@ public class Login extends javax.swing.JFrame {
         PanelFondo1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\LogoPrincipalColegio.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoPrincipalColegio.png"))); // NOI18N
         PanelFondo1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 260, 260));
 
-        LabelFondo1.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\FondoLogin.png")); // NOI18N
+        LabelFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoLogin.png"))); // NOI18N
         PanelFondo1.add(LabelFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 550));
 
         PanelFondo2.setBackground(new java.awt.Color(255, 255, 255));
@@ -64,7 +65,7 @@ public class Login extends javax.swing.JFrame {
 
         Label1.setFont(new java.awt.Font("Britannic Bold", 1, 24)); // NOI18N
         Label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Label1.setText("INICIAR SESIÃ“N");
+        Label1.setText("INICIAR SESIÓN");
         PanelFondo2.add(Label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 430, -1));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
@@ -83,7 +84,7 @@ public class Login extends javax.swing.JFrame {
 
         Label3.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         Label3.setForeground(new java.awt.Color(153, 153, 153));
-        Label3.setText("Correo o CÃ³digo de Administrador");
+        Label3.setText("Correo o Código de Administrador");
         PanelFondo2.add(Label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 330, 36));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
@@ -93,6 +94,9 @@ public class Login extends javax.swing.JFrame {
         jpwClave.setBorder(null);
         PanelFondo2.add(jpwClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 330, 40));
         PanelFondo2.add(jtextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 330, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoLogin.png"))); // NOI18N
+        PanelFondo2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
 
         PanelFondo1.add(PanelFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 430, 550));
 
@@ -165,6 +169,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel PanelFondo2;
     private javax.swing.JButton botonIngresar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
