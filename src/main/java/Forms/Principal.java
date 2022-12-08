@@ -150,6 +150,7 @@ public class Principal extends javax.swing.JFrame {
         jbEliminar = new javax.swing.JButton();
         jbActivar = new javax.swing.JButton();
         LabelFondo2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         PanelTurno = new javax.swing.JPanel();
         PanelLetrero2 = new javax.swing.JPanel();
         Letrero2 = new javax.swing.JLabel();
@@ -159,6 +160,7 @@ public class Principal extends javax.swing.JFrame {
         jbModificarHorario = new javax.swing.JButton();
         jbEliminarHorario = new javax.swing.JButton();
         LabelFondo3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         PanelAsistencia = new javax.swing.JPanel();
         PanelLetrero3 = new javax.swing.JPanel();
         Letrero3 = new javax.swing.JLabel();
@@ -168,6 +170,7 @@ public class Principal extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         LabelFondo4 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         PanelTarifario = new javax.swing.JPanel();
         PanelLetrero4 = new javax.swing.JPanel();
         Letrero4 = new javax.swing.JLabel();
@@ -181,6 +184,7 @@ public class Principal extends javax.swing.JFrame {
         jbNuevoTarifa = new javax.swing.JButton();
         jEliminarTarifa = new javax.swing.JButton();
         LabelFondo5 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         PanelPlanilla = new javax.swing.JPanel();
         PanelLetrero5 = new javax.swing.JPanel();
         Letrero5 = new javax.swing.JLabel();
@@ -192,8 +196,10 @@ public class Principal extends javax.swing.JFrame {
         jcMes = new javax.swing.JComboBox<>();
         jtextCodigo = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jbGenerar = new javax.swing.JButton();
         LabelFondo6 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         PanelBoleta = new javax.swing.JPanel();
         PanelLetrero6 = new javax.swing.JPanel();
         Letrero6 = new javax.swing.JLabel();
@@ -202,6 +208,7 @@ public class Principal extends javax.swing.JFrame {
         jbEnviarBoleta = new javax.swing.JButton();
         jbExportar = new javax.swing.JButton();
         LabelFondo7 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -217,7 +224,7 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "CÃ³digo", "Nombre", "Apellido", "Asistencias", "Tardanzas", "Faltas", "Justificadas", "Total de Asistencias"
+                "Código", "Nombre", "Apellido", "Asistencias", "Tardanzas", "Faltas", "Justificadas", "Total de Asistencias"
             }
         ));
         jTable4.setRowHeight(40);
@@ -237,7 +244,7 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "CÃ³digo", "Nombre", "Apellido", "Asistencias", "Tardanzas", "Faltas", "Justificadas", "Total de Asistencias"
+                "Código", "Nombre", "Apellido", "Asistencias", "Tardanzas", "Faltas", "Justificadas", "Total de Asistencias"
             }
         ));
         jTable5.setRowHeight(40);
@@ -257,7 +264,7 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "CÃ³digo", "Nombre", "Apellido", "Asistencias", "Tardanzas", "Faltas", "Justificadas", "Total de Asistencias"
+                "Código", "Nombre", "Apellido", "Asistencias", "Tardanzas", "Faltas", "Justificadas", "Total de Asistencias"
             }
         ));
         jTable9.setRowHeight(40);
@@ -277,7 +284,7 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "CÃ³digo", "Nombre", "Apellido", "Asistencias", "Tardanzas", "Faltas", "Justificadas", "Total de Asistencias"
+                "Código", "Nombre", "Apellido", "Asistencias", "Tardanzas", "Faltas", "Justificadas", "Total de Asistencias"
             }
         ));
         jTable10.setRowHeight(40);
@@ -297,7 +304,7 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "CÃ³digo", "Nombre", "Apellido", "Asistencias", "Tardanzas", "Faltas", "Justificadas", "Total de Asistencias"
+                "Código", "Nombre", "Apellido", "Asistencias", "Tardanzas", "Faltas", "Justificadas", "Total de Asistencias"
             }
         ));
         jTable11.setRowHeight(40);
@@ -341,7 +348,7 @@ public class Principal extends javax.swing.JFrame {
 
         PanelInicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        LabelFondo1.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        LabelFondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
         PanelInicio.add(LabelFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 640));
 
         jTabbedPane1.addTab("Inicio", PanelInicio);
@@ -386,7 +393,7 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "CÃ³digo", "Nombre", "Apellido", "Edad", "DNI", "Puesto", "NÂ° de Hijos", "CategorÃ­a", "DeducciÃ³n", "Nivel", "Estado"
+                "Id", "Código", "Nombre", "Apellido", "Edad", "DNI", "Puesto", "N° de Hijos", "Categoría", "Deducción", "Nivel", "Estado"
             }
         ));
         jtPersonal.setRowHeight(40);
@@ -430,9 +437,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         PanelPersonal.add(jbActivar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 570, 110, 40));
-
-        LabelFondo2.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelPersonal.add(LabelFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
+        PanelPersonal.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("Personal", PanelPersonal);
 
@@ -475,7 +483,7 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "", "CÃ³digo", "Nombre", "Apellido", "Hora Inicio ", "Hora Final ", "Horas Semanales", "Curso", "NÂ° de dÃ­as ", "DÃ­as Laborales"
+                "", "Código", "Nombre", "Apellido", "Hora Inicio ", "Hora Final ", "Horas Semanales", "Curso", "N° de días ", "Días Laborales"
             }
         ));
         jtHorario.setColumnSelectionAllowed(true);
@@ -513,9 +521,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         PanelTurno.add(jbEliminarHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 560, 120, 40));
-
-        LabelFondo3.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelTurno.add(LabelFondo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
+        PanelTurno.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, -1));
 
         jTabbedPane1.addTab("Turno", PanelTurno);
 
@@ -558,7 +567,7 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "CÃ³digo", "Nombre", "Apellido", "Asistencias", "Tardanzas", "Faltas", "Justificadas", "Total de Asistencias"
+                "Código", "Nombre", "Apellido", "Asistencias", "Tardanzas", "Faltas", "Justificadas", "Total de Asistencias"
             }
         ));
         jAsistencia.setRowHeight(40);
@@ -579,9 +588,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         PanelAsistencia.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, 140, 40));
-
-        LabelFondo4.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelAsistencia.add(LabelFondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
+        PanelAsistencia.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("Asistencia", PanelAsistencia);
 
@@ -624,7 +634,7 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "CÃ³digo", "Nombres", "Apellidos", "CategorÃ­a", "CÃ³digo de tarifa", "Tipo de afecto"
+                "Código", "Nombres", "Apellidos", "Categoría", "Código de tarifa", "Tipo de afecto"
             }
         ));
         jtarifadocente.setRowHeight(40);
@@ -651,7 +661,7 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "CÃ³digo", "CÃ³digo de precio", "Precio por hora"
+                "Código", "Código de precio", "Precio por hora"
             }
         ));
         jtarifa.setRowHeight(40);
@@ -703,9 +713,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         PanelTarifario.add(jEliminarTarifa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 540, 100, 40));
-
-        LabelFondo5.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelTarifario.add(LabelFondo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
+        PanelTarifario.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("Tarifario", PanelTarifario);
 
@@ -740,7 +751,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setText("Codigo Personal");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("AÃ±o");
+        jLabel2.setText("Año");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Mes");
@@ -749,7 +760,7 @@ public class Principal extends javax.swing.JFrame {
 
         jcMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\LogoPrincipalColegio.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoPrincipalColegio.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -770,8 +781,10 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jcMes, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jcAnio, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jtextCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
                 .addGap(69, 69, 69))
         );
         jPanel1Layout.setVerticalGroup(
@@ -779,6 +792,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(95, 95, 95)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel10)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
@@ -804,9 +818,11 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         PanelPlanilla.add(jbGenerar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 550, 260, 40));
-
-        LabelFondo6.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelPlanilla.add(LabelFondo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
+        jLabel12.setText("jLabel12");
+        PanelPlanilla.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 640));
 
         jTabbedPane1.addTab("Planilla", PanelPlanilla);
 
@@ -843,7 +859,7 @@ public class Principal extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "CÃ³digo", "Nombres", "Apellidos", "AÃ±o - Mes", "Estado de planilla"
+                "Código", "Nombres", "Apellidos", "Año - Mes", "Estado de planilla"
             }
         ));
         jtBoleta.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -870,9 +886,10 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         PanelBoleta.add(jbExportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 140, 40));
-
-        LabelFondo7.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelBoleta.add(LabelFondo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ColegioCompleto.jpg"))); // NOI18N
+        PanelBoleta.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("Boleta", PanelBoleta);
 
@@ -1154,10 +1171,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JButton jEliminarTarifa;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;

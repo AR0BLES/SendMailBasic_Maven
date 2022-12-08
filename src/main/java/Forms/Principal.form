@@ -479,7 +479,7 @@
             <Component class="javax.swing.JLabel" name="LabelFondo1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -699,14 +699,21 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="LabelFondo2">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="-1" height="640"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="0" width="-1" height="640"/>
+                  <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -902,14 +909,21 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="LabelFondo3">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="-1" height="640"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="0" width="-1" height="640"/>
+                  <AbsoluteConstraints x="0" y="0" width="820" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1101,14 +1115,21 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="LabelFondo4">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="-1" height="640"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="0" width="-1" height="640"/>
+                  <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1391,14 +1412,21 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="LabelFondo5">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="-1" height="640"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="0" width="-1" height="640"/>
+                  <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1497,8 +1525,10 @@
                               <Component id="jcAnio" alignment="0" max="32767" attributes="0"/>
                               <Component id="jtextCodigo" min="-2" pref="117" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="87" max="32767" attributes="0"/>
+                          <EmptySpace pref="80" max="32767" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1508,7 +1538,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jtextCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1524,7 +1555,7 @@
                                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="108" max="32767" attributes="0"/>
                       </Group>
@@ -1600,9 +1631,11 @@
                 <Component class="javax.swing.JTextField" name="jtextCodigo">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel4">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel10">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\LogoPrincipalColegio.png"/>
+                      <Image iconType="3" name="/Imagenes/LogoPrincipalColegio.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -1622,14 +1655,22 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="LabelFondo6">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
-                </Property>
-              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="0" y="0" width="-1" height="640"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel12">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="jLabel12"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="820" height="640"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -1748,14 +1789,21 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JLabel" name="LabelFondo7">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="-1" height="640"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\apsenior\Downloads\ProyectoCasiCasiFinal\SendMailBasic_Maven-main\src\main\java\Imagenes\ColegioCompleto.jpg"/>
+                  <Image iconType="3" name="/Imagenes/ColegioCompleto.jpg"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="0" width="-1" height="640"/>
+                  <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
