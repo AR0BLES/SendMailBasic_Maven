@@ -68,6 +68,7 @@ public class cHorarioCrud {
          JOptionPane.showMessageDialog(null,"error"+e.toString()); 
         }
     }
+//Eliminar el contenido de la tabla HORARIO
       public  void eliminarHorario(Connection conexion, String IdUsuario){
            
     try{
@@ -81,7 +82,7 @@ public class cHorarioCrud {
          JOptionPane.showMessageDialog(null,"error"+e.toString()); 
         }
     }
-      
+//Obtener el codigo o ID del personal  
         public  int ObtenerIdPersonal(Connection conexion,String Usuario){
        Integer valor=0;
        String sql="SELECT IdPersonal FROM Personal P INNER JOIN Usuario U ON P.IdUsuario=U.Id_Usuario WHERE Usuario='"+Usuario+"'";
