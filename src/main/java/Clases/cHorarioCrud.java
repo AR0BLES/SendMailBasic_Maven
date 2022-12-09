@@ -103,7 +103,7 @@ public class cHorarioCrud {
        
        return valor;
    } 
-      
+//Estado del horario : activo      
        public  void UpdateActivo(Connection conexion, String IdUsuario){
            
     try{
@@ -117,7 +117,7 @@ public class cHorarioCrud {
          JOptionPane.showMessageDialog(null,"error"+e.toString()); 
         }
     }
-       
+//Lista del contenido del HORARIO    
         public  DefaultTableModel ListarHorario(Connection conexion){
         DefaultTableModel modelo=new  DefaultTableModel();
         modelo.addColumn("IdHorario");
