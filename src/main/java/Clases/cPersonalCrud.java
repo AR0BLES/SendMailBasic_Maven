@@ -79,6 +79,7 @@ public class cPersonalCrud {
          JOptionPane.showMessageDialog(null,"error"+e.toString()); 
         }
     }
+//Eliminar el contenido de la tabla PERSONAL
       public  void eliminarPersonal(Connection conexion, String IdUsuario){
            
     try{
@@ -92,7 +93,7 @@ public class cPersonalCrud {
          JOptionPane.showMessageDialog(null,"error"+e.toString()); 
         }
     }
-      
+//Obtener el codigo o ID del personal     
        public  void UpdateActivo(Connection conexion, String IdUsuario){
            
     try{
