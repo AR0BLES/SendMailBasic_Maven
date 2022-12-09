@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class cGenerarPdf2 {
-
+//Generar boleta de pago en pdf
     public void generar(Boleta boleta) {
         // step 1: creation of a document-object        
         Document document = new Document();
@@ -51,6 +51,7 @@ public class cGenerarPdf2 {
             g.setFont(font2);
             g.setColor(Color.BLACK);
             
+    //Contenido de la boleta de pago
             //Columna 1
             g.drawString("Docente: ", 40, 150);
             g.drawString(boleta.Nombres+" "+boleta.Apellidos, 160, 150);
