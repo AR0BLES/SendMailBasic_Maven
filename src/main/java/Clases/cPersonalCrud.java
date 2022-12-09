@@ -93,7 +93,7 @@ public class cPersonalCrud {
          JOptionPane.showMessageDialog(null,"error"+e.toString()); 
         }
     }
-//Obtener el codigo o ID del personal     
+//Estado del horario : activo   
        public  void UpdateActivo(Connection conexion, String IdUsuario){
            
     try{
@@ -107,7 +107,7 @@ public class cPersonalCrud {
          JOptionPane.showMessageDialog(null,"error"+e.toString()); 
         }
     }
-       
+//Lista del contenido del HORARIO
         public  DefaultTableModel ListarPersonal(Connection conexion){
         DefaultTableModel modelo=new  DefaultTableModel();
         modelo.addColumn("IdPersonal");
