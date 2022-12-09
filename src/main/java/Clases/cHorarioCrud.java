@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author apsenior
  */
+//Contenido de la tabla HORARIO
 public class cHorarioCrud {
     public  void insertarHorario(Connection conexion, Horario horario){
     String sql ="INSERT INTO Horario(IdPersonal,HoraInicio,HoraFin,HorasSemana,Curso,NroDias,DiasLab) VALUES (?,?,?,?,?,?,?);";
