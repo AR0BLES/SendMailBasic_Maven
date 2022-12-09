@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class cPlanillaCrud {
     
-    
+//Contenido de GENERARPLANILLA
      public  void cGenerarPlanilla(Connection conexion, Planilla planilla){
     String sql ="{call cGenerarPlanillaporMes (?,?,?)}";
     try{
