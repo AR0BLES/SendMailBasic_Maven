@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author apsenior
  */
+//Contenido de la tabla insertarPERSONAL
 public class cPersonalCrud {
      public  void insertarPersonal(Connection conexion, Personal personal){
     String sql ="INSERT INTO Personal VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);";
