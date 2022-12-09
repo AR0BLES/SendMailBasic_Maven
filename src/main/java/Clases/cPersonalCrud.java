@@ -48,6 +48,8 @@ public class cPersonalCrud {
          JOptionPane.showMessageDialog(null,"error"+e.toString()); 
         }
     }
+     
+//Contenido de la tabla actualizarPERSONAL
       public  void actualizarPersonal(Connection conexion, Personal personal){
     String sql ="{call SP_Actualizar_Personal (?,?,?,?,?,?,?,?,?,?,?,?,?)}";
     try{
