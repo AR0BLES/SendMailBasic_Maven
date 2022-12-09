@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author apsenior
  */
-//Contenido de la tabla HORARIO
+//Contenido de la tabla insertarHORARIO
 public class cHorarioCrud {
     public  void insertarHorario(Connection conexion, Horario horario){
     String sql ="INSERT INTO Horario(IdPersonal,HoraInicio,HoraFin,HorasSemana,Curso,NroDias,DiasLab) VALUES (?,?,?,?,?,?,?);";
@@ -44,6 +44,7 @@ public class cHorarioCrud {
          JOptionPane.showMessageDialog(null,"error"+e.toString()); 
         }
     }
+//Contenido de la tabla actualizarHORARIO
       public  void actualizarHorario(Connection conexion, Horario horario){
     String sql ="{call SP_Actualizar_Horario (?,?,?,?,?,?)}";
     try{
