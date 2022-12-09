@@ -68,12 +68,12 @@ public class NuevoHorario extends javax.swing.JFrame {
         jtextCantDiaLab = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        jchkVie = new javax.swing.JCheckBox();
+        jchkMie = new javax.swing.JCheckBox();
+        jchkLun = new javax.swing.JCheckBox();
+        jchkTodos = new javax.swing.JCheckBox();
+        jchkJue = new javax.swing.JCheckBox();
+        jchkMar = new javax.swing.JCheckBox();
         jLabel8 = new javax.swing.JLabel();
         jtextHoraInicio = new javax.swing.JTextField();
         jtextCantHora = new javax.swing.JTextField();
@@ -148,23 +148,23 @@ public class NuevoHorario extends javax.swing.JFrame {
         jLabel7.setText("Días");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 37, 20));
 
-        jCheckBox1.setText("Viernes");
-        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 85, -1));
+        jchkVie.setText("Viernes");
+        jPanel1.add(jchkVie, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 85, -1));
 
-        jCheckBox2.setText("Miercoles");
-        jPanel1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 85, -1));
+        jchkMie.setText("Miercoles");
+        jPanel1.add(jchkMie, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 85, -1));
 
-        jCheckBox3.setText("Lunes");
-        jPanel1.add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 85, -1));
+        jchkLun.setText("Lunes");
+        jPanel1.add(jchkLun, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 85, -1));
 
-        jCheckBox4.setText("Todos");
-        jPanel1.add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 85, -1));
+        jchkTodos.setText("Todos");
+        jPanel1.add(jchkTodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 85, -1));
 
-        jCheckBox5.setText("Jueves");
-        jPanel1.add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 85, -1));
+        jchkJue.setText("Jueves");
+        jPanel1.add(jchkJue, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 85, -1));
 
-        jCheckBox6.setText("Martes");
-        jPanel1.add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 85, -1));
+        jchkMar.setText("Martes");
+        jPanel1.add(jchkMar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 85, -1));
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\LogoPrincipalColegio.png")); // NOI18N
@@ -210,11 +210,31 @@ public class NuevoHorario extends javax.swing.JFrame {
 
     private void jbGuardarHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarHorarioActionPerformed
        String HoraInicio= jtextHoraInicio.getText();
-        String HoraFin=  jtextHoraFin.getText();
-         String CantHora=  jtextCantHora.getText();
-            String Curso=jtextCurso.getText();
-            String CantDiaLab= jtextCantDiaLab.getText();
-String Dia="LUN,MAR";
+       String HoraFin=  jtextHoraFin.getText();
+       String CantHora=  jtextCantHora.getText();
+       String Curso=jtextCurso.getText();
+       String CantDiaLab= jtextCantDiaLab.getText();
+        String Dia="";    
+          if  (jchkLun.isSelected()){
+            Dia="LUN";
+          }
+          if  (jchkMar.isSelected()){
+            Dia=Dia+",MAR";
+          }
+          if  (jchkMie.isSelected()){
+            Dia=Dia+",MIE";
+          }
+          if  (jchkJue.isSelected()){
+            Dia=Dia+",JUE";
+          }
+          if  (jchkVie.isSelected()){
+            Dia=Dia+",VIE";
+          }
+          if  (jchkTodos.isSelected()){
+             
+            Dia="TODOS";
+          }
+           
         
       
       if (jbGuardarHorario.getText()=="Editar"){
@@ -295,12 +315,6 @@ String Dia="LUN,MAR";
     private javax.swing.JPanel PanelLetrero;
     private javax.swing.JPanel PanelNuevoHorario;
     private javax.swing.JButton jButton4;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -312,6 +326,12 @@ String Dia="LUN,MAR";
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbGuardarHorario;
     private javax.swing.JButton jbLimpiar;
+    private javax.swing.JCheckBox jchkJue;
+    private javax.swing.JCheckBox jchkLun;
+    private javax.swing.JCheckBox jchkMar;
+    private javax.swing.JCheckBox jchkMie;
+    private javax.swing.JCheckBox jchkTodos;
+    private javax.swing.JCheckBox jchkVie;
     private javax.swing.JTextField jtextCantDiaLab;
     private javax.swing.JTextField jtextCantHora;
     private javax.swing.JTextField jtextCodigoDocente;

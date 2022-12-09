@@ -99,7 +99,10 @@ public class Principal extends javax.swing.JFrame {
     }
            conexion con= new conexion();
        Connection conectar=con.establecerConexion();    
-       
+       void usuariologin(String Usuario) {
+         
+           jlblBienviendo.setText("BIENVENIDO: "+Usuario.toUpperCase());
+        }
        //listar
     void ListarDatos(){
        cPersonalCrud p = new cPersonalCrud();
@@ -149,7 +152,7 @@ public class Principal extends javax.swing.JFrame {
         jButton11 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         PanelBlanco = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        jlblBienviendo = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         PanelInicio = new javax.swing.JPanel();
@@ -186,6 +189,7 @@ public class Principal extends javax.swing.JFrame {
         PanelTarifario = new javax.swing.JPanel();
         PanelLetrero4 = new javax.swing.JPanel();
         Letrero4 = new javax.swing.JLabel();
+        btnRefrescarTarifario = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         jtarifadocente = new javax.swing.JTable();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -331,13 +335,15 @@ public class Principal extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelBlanco.setBackground(new java.awt.Color(255, 255, 255));
         PanelBlanco.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setText("BIENVENIDO");
-        PanelBlanco.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 260, 30));
+        jlblBienviendo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        PanelBlanco.add(jlblBienviendo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 260, 30));
 
         jButton3.setText("CERRAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -626,17 +632,30 @@ public class Principal extends javax.swing.JFrame {
         Letrero4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Letrero4.setText("Tarifario");
 
+        btnRefrescarTarifario.setText("Refrescar");
+        btnRefrescarTarifario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefrescarTarifarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelLetrero4Layout = new javax.swing.GroupLayout(PanelLetrero4);
         PanelLetrero4.setLayout(PanelLetrero4Layout);
         PanelLetrero4Layout.setHorizontalGroup(
             PanelLetrero4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Letrero4, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addGroup(PanelLetrero4Layout.createSequentialGroup()
+                .addComponent(Letrero4, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnRefrescarTarifario, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
         PanelLetrero4Layout.setVerticalGroup(
             PanelLetrero4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLetrero4Layout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(Letrero4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PanelLetrero4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRefrescarTarifario)
+                    .addComponent(Letrero4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -1182,6 +1201,11 @@ public class Principal extends javax.swing.JFrame {
       }
     }//GEN-LAST:event_EnviarTodosActionPerformed
 
+    private void btnRefrescarTarifarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefrescarTarifarioActionPerformed
+        // TODO add your handling code here:
+        ListarDatosTarifa();
+    }//GEN-LAST:event_btnRefrescarTarifarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1248,6 +1272,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel PanelTarifario;
     private javax.swing.JPanel PanelTurno;
     private javax.swing.JButton btnRecargar;
+    private javax.swing.JButton btnRefrescarTarifario;
     private javax.swing.JTable jAsistencia;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -1262,7 +1287,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
@@ -1296,6 +1320,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jbTarifaDocEliminar;
     private javax.swing.JComboBox<String> jcAnio;
     private javax.swing.JComboBox<String> jcMes;
+    private javax.swing.JLabel jlblBienviendo;
     private javax.swing.JTable jtBoleta;
     private javax.swing.JTable jtHorario;
     private javax.swing.JTable jtPersonal;

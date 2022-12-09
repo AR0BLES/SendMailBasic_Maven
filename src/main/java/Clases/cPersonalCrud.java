@@ -117,10 +117,10 @@ public class cPersonalCrud {
              modelo.addColumn("Deduccion");
              modelo.addColumn("Categoria");
              modelo.addColumn("Estado");
+             modelo.addColumn("Puesto");
              modelo.addColumn("Nivel");
              modelo.addColumn("FechaNacimiento");
              modelo.addColumn("Usuario");
-             modelo.addColumn("Clave");
           try{
             CallableStatement cmd=conexion.prepareCall("{CALL SP_LISTAR_PERSONAL}");
             ResultSet rs= cmd.executeQuery();

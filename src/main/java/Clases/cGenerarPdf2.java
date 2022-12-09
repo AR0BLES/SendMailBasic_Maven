@@ -38,18 +38,21 @@ public class cGenerarPdf2 {
                         
             Font font1 = new Font("Tahoma", Font.BOLD + Font.ITALIC, 30);
             g.setFont(font1);
+            
+           
 
             g.setColor(Color.BLACK);
             g.drawString("Boleta de Pago" + " "+ boleta.Anio+"-"+boleta.Mes, 80, 90);
            
-            
-            //ImageIcon img1 = new ImageIcon(getClass().getResource("imagenes/play_list_youtube-GUI_Java.jpg"));
-            //g.drawImage(img1.getImage(), 200, 250, 200, 200, null);
-            
+
+      
             Font font2 = new Font("Tahoma", Font.PLAIN, 10);
             Font font3 = new Font("Tahoma", Font.BOLD, 11);
             g.setFont(font2);
             g.setColor(Color.BLACK);
+            
+             g.drawString("Colegio Villa Maria: ", 380, 50);
+            g.drawString("El pollito murio", 380, 60);
             
             //Columna 1
             g.drawString("Docente: ", 40, 150);

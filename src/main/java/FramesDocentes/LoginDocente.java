@@ -1,28 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-/*
-*Hecho por Alexis Robles
-*31/11/2022
-*Formulario para Logear al sistema
- */
-package Forms;
-import Clases.cUsuarioCrud;
-import Clases.conexion;
-import java.sql.*;
-import javax.swing.JOptionPane;
-
+package FramesDocentes;
 /**
  *
  * @author HP
  */
-public class Login extends javax.swing.JFrame {
+public class LoginDocente extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public Login() {
+    public LoginDocente() {
         initComponents();
     }
 
@@ -37,7 +23,6 @@ public class Login extends javax.swing.JFrame {
 
         PanelFondo1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        LabelFondo1 = new javax.swing.JLabel();
         PanelFondo2 = new javax.swing.JPanel();
         LabelLogin = new javax.swing.JLabel();
         Label1 = new javax.swing.JLabel();
@@ -52,19 +37,18 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        PanelFondo1.setBackground(new java.awt.Color(255, 193, 7));
         PanelFondo1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\LogoPrincipalColegio.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoPrincipalColegio.png"))); // NOI18N
         PanelFondo1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 260, 260));
-
-        LabelFondo1.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\FondoLogin.png")); // NOI18N
-        PanelFondo1.add(LabelFondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 550));
 
         PanelFondo2.setBackground(new java.awt.Color(255, 255, 255));
         PanelFondo2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LabelLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoLogin.png"))); // NOI18N
         PanelFondo2.add(LabelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 430, -1));
 
         Label1.setFont(new java.awt.Font("Britannic Bold", 1, 24)); // NOI18N
@@ -88,7 +72,7 @@ public class Login extends javax.swing.JFrame {
 
         Label3.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         Label3.setForeground(new java.awt.Color(153, 153, 153));
-        Label3.setText("Correo o Código de Administrador");
+        Label3.setText("Correo o Código de Docente");
         PanelFondo2.add(Label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 330, 36));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
@@ -96,7 +80,18 @@ public class Login extends javax.swing.JFrame {
 
         jpwClave.setText("jPasswordField2");
         jpwClave.setBorder(null);
+        jpwClave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jpwClaveActionPerformed(evt);
+            }
+        });
         PanelFondo2.add(jpwClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 330, 40));
+
+        jtextUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtextUsuarioActionPerformed(evt);
+            }
+        });
         PanelFondo2.add(jtextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 330, -1));
 
         PanelFondo1.add(PanelFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 430, 550));
@@ -108,24 +103,16 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarActionPerformed
-         String Usuario =jtextUsuario.getText();
-        String Clave =String.valueOf(jpwClave.getPassword()) ;
-       conexion con= new conexion();
-       Connection conectar=con.establecerConexion();
-       cUsuarioCrud val= new cUsuarioCrud();
-       int VALOR=val.ValidarLoginUsuario(conectar, Usuario, Clave);
-       
-       if (VALOR==0){
-            JOptionPane.showMessageDialog(null,"Usuario o clave erronea intentelo nuevamente"); 
-        }
-       else{
-        //JOptionPane.showMessageDialog(null,"Ok Usuario Encontrado"); 
-        Principal menu =new Principal();
-        menu.usuariologin(Usuario);
-       // FrmMenu menu =new FrmMenu();
-        menu.setVisible(true);
-        }
+        
     }//GEN-LAST:event_botonIngresarActionPerformed
+
+    private void jpwClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpwClaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jpwClaveActionPerformed
+
+    private void jtextUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtextUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtextUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,20 +131,23 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginDocente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new LoginDocente().setVisible(true);
             }
         });
     }
@@ -165,7 +155,6 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Label1;
     private javax.swing.JLabel Label3;
-    private javax.swing.JLabel LabelFondo1;
     private javax.swing.JLabel LabelLogin;
     private javax.swing.JPanel PanelFondo1;
     private javax.swing.JPanel PanelFondo2;

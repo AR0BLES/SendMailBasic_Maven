@@ -43,10 +43,11 @@ public class VistaExcel extends javax.swing.JFrame {
         Letrero3 = new javax.swing.JLabel();
         btnCerrar = new javax.swing.JButton();
         LabelFondo4 = new javax.swing.JLabel();
-        btnCargar = new javax.swing.JButton();
         btnCargarSql = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         btnImportar.setText("Importar");
         btnImportar.addActionListener(new java.awt.event.ActionListener() {
@@ -105,13 +106,6 @@ public class VistaExcel extends javax.swing.JFrame {
 
         LabelFondo4.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
 
-        btnCargar.setText("Importar");
-        btnCargar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCargarActionPerformed(evt);
-            }
-        });
-
         btnCargarSql.setText("Cargar");
         btnCargarSql.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,10 +122,8 @@ public class VistaExcel extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(181, 181, 181)
                         .addComponent(btnImportar, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(btnCargarSql, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(91, 91, 91)
+                        .addComponent(btnCargarSql, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(PanelLetrero3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
                 .addGap(12, 12, 12))
@@ -148,7 +140,6 @@ public class VistaExcel extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCargar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnImportar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCargarSql, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(57, 57, 57))
@@ -165,10 +156,6 @@ public class VistaExcel extends javax.swing.JFrame {
     private void btnImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImportarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnImportarActionPerformed
-
-    private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCargarActionPerformed
 
     private void btnCargarSqlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarSqlActionPerformed
       if(DatosExcel.getRowCount()>0){
@@ -245,7 +232,6 @@ public class VistaExcel extends javax.swing.JFrame {
     private javax.swing.JLabel LabelFondo4;
     private javax.swing.JLabel Letrero3;
     private javax.swing.JPanel PanelLetrero3;
-    public javax.swing.JButton btnCargar;
     private javax.swing.JButton btnCargarSql;
     private javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnImportar;

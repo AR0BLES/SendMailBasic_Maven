@@ -33,7 +33,6 @@ public class ControladorExcel implements ActionListener{
         //CLIC EN GUARDAR PARA ACTUALIZAR
         // O REPETIR LOS MISMOS PASOS ANTERIORES PUBLIC
         this.VistaEX.btnImportar.addActionListener(this);
-        this.VistaEX.btnCargar.addActionListener(this);
         VistaEX.setVisible(true);
         VistaEX.setLocationRelativeTo(null);
     }
@@ -55,19 +54,6 @@ public class ControladorExcel implements ActionListener{
                 //ALT + 124 ||
                 if(archivo.getName().endsWith("xls")||archivo.getName().endsWith("xlsx")){
                     JOptionPane.showMessageDialog(null, ModeloEX.Importar(archivo,VistaEX.DatosExcel));
-                }else{
-                    JOptionPane.showMessageDialog(null, "Seleccionar formato Valido");
-                }
-            }
-        }
-        //COPIAR Y PEGAR EL MISMO CODIGO
-        
-         if(e.getSource()==VistaEX.btnCargar){
-            if(SelectArchivo.showDialog(null, "Seleccionar Archivo")==JFileChooser.APPROVE_OPTION){
-                archivo=SelectArchivo.getSelectedFile();
-                //ALT + 124 ||
-                if(archivo.getName().endsWith("xls")||archivo.getName().endsWith("xlsx")){
-                    JOptionPane.showMessageDialog(null, ModeloEX.Exportar(archivo,VistaEX.DatosExcel));
                 }else{
                     JOptionPane.showMessageDialog(null, "Seleccionar formato Valido");
                 }
