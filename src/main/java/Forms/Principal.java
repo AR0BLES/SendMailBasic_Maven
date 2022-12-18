@@ -2,12 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+/*
+*Hecho por Alexis Robles
+*31/11/2022
+*Formulario para Logear al sistema
+ */
 package Forms;
 
 import Clases.Boleta;
+import Clases.ControladorExcel;
 import Clases.EnviarCorreo;
 import Clases.ExportarExcel;
+import Clases.ModeloExcel;
 import Clases.Planilla;
+import Clases.cAsistenciaDetalleCrud;
 import Clases.cBoletaCrud;
 import Clases.cGenerarPdf2;
 import Clases.cHorarioCrud;
@@ -82,15 +90,20 @@ public class Principal extends javax.swing.JFrame {
     String CorreoDestinoBoleta;
     public Principal() {
         initComponents();
+         this.setLocationRelativeTo(null);
         //llamamos a las lista
         ListarDatos();
         ListarDatosHorario();
         ListarDatosTarifa();
         ListarDatosBoleta();
+        ListarAsistenciaDetalle("","");
     }
            conexion con= new conexion();
        Connection conectar=con.establecerConexion();    
-       
+       void usuariologin(String Usuario) {
+         
+           jlblBienviendo.setText("BIENVENIDO: "+Usuario.toUpperCase());
+        }
        //listar
     void ListarDatos(){
        cPersonalCrud p = new cPersonalCrud();
@@ -112,6 +125,11 @@ public class Principal extends javax.swing.JFrame {
        cBoletaCrud bc = new cBoletaCrud();
        jtBoleta.setModel(bc.ListarBoleta(conectar));
     }
+        void ListarAsistenciaDetalle(String Anio,String Mes){
+       cAsistenciaDetalleCrud p = new cAsistenciaDetalleCrud();
+       jAsistencia.setModel(p.ListarAsistenciaDetalle(conectar,Anio,Mes));
+    }
+      
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -135,7 +153,7 @@ public class Principal extends javax.swing.JFrame {
         jButton11 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         PanelBlanco = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        jlblBienviendo = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         PanelInicio = new javax.swing.JPanel();
@@ -161,16 +179,33 @@ public class Principal extends javax.swing.JFrame {
         LabelFondo3 = new javax.swing.JLabel();
         PanelAsistencia = new javax.swing.JPanel();
         PanelLetrero3 = new javax.swing.JPanel();
-        Letrero3 = new javax.swing.JLabel();
+        btnRecargar = new javax.swing.JButton();
+        cboAnioAsistencia = new javax.swing.JComboBox<>();
+        cboMesAsistencia = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        btnBuscarTodo = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jAsistencia = new javax.swing.JTable();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         LabelFondo4 = new javax.swing.JLabel();
+        Letrero3 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        jcAnio1 = new javax.swing.JComboBox<>();
+        jComboBox7 = new javax.swing.JComboBox<>();
+        jComboBox8 = new javax.swing.JComboBox<>();
+        jComboBox9 = new javax.swing.JComboBox<>();
+        jComboBox10 = new javax.swing.JComboBox<>();
+        jComboBox11 = new javax.swing.JComboBox<>();
         PanelTarifario = new javax.swing.JPanel();
         PanelLetrero4 = new javax.swing.JPanel();
         Letrero4 = new javax.swing.JLabel();
+        btnRefrescarTarifario = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         jtarifadocente = new javax.swing.JTable();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -201,6 +236,7 @@ public class Principal extends javax.swing.JFrame {
         jtBoleta = new javax.swing.JTable();
         jbEnviarBoleta = new javax.swing.JButton();
         jbExportar = new javax.swing.JButton();
+        EnviarTodos = new javax.swing.JButton();
         LabelFondo7 = new javax.swing.JLabel();
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
@@ -315,13 +351,15 @@ public class Principal extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelBlanco.setBackground(new java.awt.Color(255, 255, 255));
         PanelBlanco.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setText("BIENVENIDO");
-        PanelBlanco.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 260, 30));
+        jlblBienviendo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        PanelBlanco.add(jlblBienviendo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 260, 30));
 
         jButton3.setText("CERRAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -523,23 +561,68 @@ public class Principal extends javax.swing.JFrame {
 
         PanelLetrero3.setBackground(new java.awt.Color(0, 2, 17));
 
-        Letrero3.setFont(new java.awt.Font("Perpetua Titling MT", 1, 24)); // NOI18N
-        Letrero3.setForeground(new java.awt.Color(255, 255, 255));
-        Letrero3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Letrero3.setText("ASISTENCIAS");
+        btnRecargar.setText("Buscar");
+        btnRecargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecargarActionPerformed(evt);
+            }
+        });
+
+        cboAnioAsistencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2022", "2023", "2024", "2025" }));
+
+        cboMesAsistencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Año:");
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Mes:");
+
+        btnBuscarTodo.setText("Buscar Todo");
+        btnBuscarTodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarTodoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelLetrero3Layout = new javax.swing.GroupLayout(PanelLetrero3);
         PanelLetrero3.setLayout(PanelLetrero3Layout);
         PanelLetrero3Layout.setHorizontalGroup(
             PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Letrero3, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLetrero3Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cboAnioAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboMesAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnRecargar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBuscarTodo, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
+                .addContainerGap(372, Short.MAX_VALUE))
         );
         PanelLetrero3Layout.setVerticalGroup(
             PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLetrero3Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(Letrero3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelLetrero3Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(PanelLetrero3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnRecargar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cboAnioAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboMesAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarTodo))
+                .addGap(13, 13, 13))
         );
 
         PanelAsistencia.add(PanelLetrero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 70));
@@ -564,24 +647,65 @@ public class Principal extends javax.swing.JFrame {
         jAsistencia.setRowHeight(40);
         jScrollPane3.setViewportView(jAsistencia);
 
-        PanelAsistencia.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 750, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
-        PanelAsistencia.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 130, -1));
+        PanelAsistencia.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 750, -1));
 
         jButton8.setText("Cargar");
-        PanelAsistencia.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 560, 140, 40));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        PanelAsistencia.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 550, 140, 40));
 
-        jButton9.setText("Importar");
+        LabelFondo4.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
+        PanelAsistencia.add(LabelFondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
+
+        Letrero3.setFont(new java.awt.Font("Perpetua Titling MT", 1, 24)); // NOI18N
+        Letrero3.setForeground(new java.awt.Color(255, 255, 255));
+        Letrero3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Letrero3.setText("ASISTENCIAS");
+        PanelAsistencia.add(Letrero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 808, 46));
+
+        jButton9.setText("Cargar");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
-        PanelAsistencia.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, 140, 40));
+        PanelAsistencia.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 140, 40));
 
-        LabelFondo4.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
-        PanelAsistencia.add(LabelFondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 130, -1));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 130, -1));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 130, -1));
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 130, -1));
+
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 130, -1));
+
+        jcAnio1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "2022", "2023", "2024", "2025", "2026" }));
+        PanelAsistencia.add(jcAnio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, -1));
+
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, -1));
+
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, -1));
+
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, -1));
+
+        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, -1));
 
         jTabbedPane1.addTab("Asistencia", PanelAsistencia);
 
@@ -594,17 +718,30 @@ public class Principal extends javax.swing.JFrame {
         Letrero4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Letrero4.setText("Tarifario");
 
+        btnRefrescarTarifario.setText("Refrescar");
+        btnRefrescarTarifario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefrescarTarifarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelLetrero4Layout = new javax.swing.GroupLayout(PanelLetrero4);
         PanelLetrero4.setLayout(PanelLetrero4Layout);
         PanelLetrero4Layout.setHorizontalGroup(
             PanelLetrero4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Letrero4, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addGroup(PanelLetrero4Layout.createSequentialGroup()
+                .addComponent(Letrero4, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnRefrescarTarifario, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
         PanelLetrero4Layout.setVerticalGroup(
             PanelLetrero4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLetrero4Layout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(Letrero4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PanelLetrero4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRefrescarTarifario)
+                    .addComponent(Letrero4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -823,7 +960,9 @@ public class Principal extends javax.swing.JFrame {
         PanelLetrero6.setLayout(PanelLetrero6Layout);
         PanelLetrero6Layout.setHorizontalGroup(
             PanelLetrero6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Letrero6, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addGroup(PanelLetrero6Layout.createSequentialGroup()
+                .addComponent(Letrero6, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
+                .addGap(152, 152, 152))
         );
         PanelLetrero6Layout.setVerticalGroup(
             PanelLetrero6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -861,7 +1000,7 @@ public class Principal extends javax.swing.JFrame {
                 jbEnviarBoletaActionPerformed(evt);
             }
         });
-        PanelBoleta.add(jbEnviarBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 550, 140, 40));
+        PanelBoleta.add(jbEnviarBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 550, 140, 40));
 
         jbExportar.setText("Exportar");
         jbExportar.addActionListener(new java.awt.event.ActionListener() {
@@ -869,7 +1008,15 @@ public class Principal extends javax.swing.JFrame {
                 jbExportarActionPerformed(evt);
             }
         });
-        PanelBoleta.add(jbExportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 140, 40));
+        PanelBoleta.add(jbExportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 550, 140, 40));
+
+        EnviarTodos.setText("Enviar Todos");
+        EnviarTodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EnviarTodosActionPerformed(evt);
+            }
+        });
+        PanelBoleta.add(EnviarTodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 550, 116, 40));
 
         LabelFondo7.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelBoleta.add(LabelFondo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
@@ -881,10 +1028,6 @@ public class Principal extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jbCrearHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCrearHorarioActionPerformed
        //Poner Formulario Visible
@@ -938,6 +1081,8 @@ public class Principal extends javax.swing.JFrame {
        //Enviar Boleta de pago
         Boleta b = new Boleta(NombresBoleta,ApellidosBoleta,SueldoxHoraBoleta,HorasDictadasBoleta,MontoDescporCategoriaBoleta,MontoDescporSeguroBoleta,MontoBonificacionBoleta,SueldoNetoBoleta,CuentaBancariaBoleta,TipoBonificacionBoleta,NivelBoleta,SeguroSaludBoleta,CodigoUsuarioBoleta,MesBoleta,AnioBoleta,CategoriaBoleta,DeduccionBoleta,CorreoDestinoBoleta);
         cGenerarPdf2 c = new cGenerarPdf2();
+          JOptionPane.showMessageDialog(null, 
+                "Se creo el archivo Boleta.pdf en la carpeta del proyecto");
          c.generar(b);
          EnviarCorreo e = new EnviarCorreo();
           try {
@@ -970,7 +1115,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jbActivarActionPerformed
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
-        
+
+            
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void jtPersonalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtPersonalMouseClicked
@@ -1079,6 +1225,80 @@ public class Principal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        ModeloExcel ModeloEX=new ModeloExcel();
+        VistaExcel VistaEX=new VistaExcel();
+        ControladorExcel ControlExcel=new ControladorExcel(VistaEX, ModeloEX);  
+        ListarAsistenciaDetalle("","");
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+// Sirve para actualizar el boton de asistencia
+    private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
+        // TODO add your handling code here:
+        String Anio =String.valueOf(cboAnioAsistencia.getSelectedItem());
+        String  Mes=String.valueOf(cboMesAsistencia.getSelectedItem());
+        ListarAsistenciaDetalle(Anio,Mes);
+    }//GEN-LAST:event_btnRecargarActionPerformed
+// Envío de boleta
+    private void EnviarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarTodosActionPerformed
+             if(jtBoleta.getRowCount()>0){
+          for (int i=0;i<jtBoleta.getRowCount();i++){
+            String NombresBoleta=    String.valueOf(jtBoleta.getValueAt(i,0));
+            String ApellidosBoleta=    String.valueOf( jtBoleta.getValueAt(i,1));
+            String SueldoxHoraBoleta=    String.valueOf(jtBoleta.getValueAt(i,2));
+            String HorasDictadasBoleta=    String.valueOf(jtBoleta.getValueAt(i,3));
+            String MontoDescporCategoriaBoleta=    String.valueOf(jtBoleta.getValueAt(i,4));
+            String MontoDescporSeguroBoleta=    String.valueOf(jtBoleta.getValueAt(i,5));
+            String MontoBonificacionBoleta=    String.valueOf(jtBoleta.getValueAt(i,6));
+            String SueldoNetoBoleta=    String.valueOf(jtBoleta.getValueAt(i,7));
+            String CuentaBancariaBoleta=    String.valueOf(jtBoleta.getValueAt(i,8));
+            String TipoBonificacionBoleta=    String.valueOf(jtBoleta.getValueAt(i,9));
+            String NivelBoleta=    String.valueOf(jtBoleta.getValueAt(i,10));
+            String SeguroSaludBoleta=    String.valueOf(jtBoleta.getValueAt(i,11));
+             String CodigoUsuarioBoleta=    String.valueOf(jtBoleta.getValueAt(i,12));
+            String MesBoleta=    String.valueOf(jtBoleta.getValueAt(i,13));
+            String AnioBoleta=    String.valueOf(jtBoleta.getValueAt(i,14));
+            String CategoriaBoleta=    String.valueOf(jtBoleta.getValueAt(i,15));
+            String DeduccionBoleta=    String.valueOf(jtBoleta.getValueAt(i,16));
+            String CorreoDestinoBoleta=    String.valueOf(jtBoleta.getValueAt(i,17));
+//JOptionPane.showMessageDialog(this, codigo+Nombre+Apellido+Asistencia+Tardanza+Falta+Justificada+TotalAsistencia+HoraporAsistencia+TotalHora+Mes+Anio);
+                if (CodigoUsuarioBoleta!="null"){
+                Boleta b = new Boleta(NombresBoleta,ApellidosBoleta,SueldoxHoraBoleta,HorasDictadasBoleta,
+                        MontoDescporCategoriaBoleta,MontoDescporSeguroBoleta,MontoBonificacionBoleta,
+                        SueldoNetoBoleta,CuentaBancariaBoleta,TipoBonificacionBoleta,NivelBoleta,SeguroSaludBoleta,
+                        CodigoUsuarioBoleta,MesBoleta,AnioBoleta,CategoriaBoleta,DeduccionBoleta,CorreoDestinoBoleta);
+                    cGenerarPdf2 c = new cGenerarPdf2();
+                     c.generar(b);
+                     EnviarCorreo e = new EnviarCorreo();
+                      try {
+                          e.main(CorreoDestinoBoleta);
+                          // TODO add your handling code here:
+                      } catch (MessagingException ex) {
+                          Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                      } 
+                
+       }
+      
+          }
+           JOptionPane.showMessageDialog(null,"Correos enviados con éxito");
+      }else{
+      JOptionPane.showMessageDialog(this, "La tabla se encuentra vacia");
+      }
+    }//GEN-LAST:event_EnviarTodosActionPerformed
+
+    private void btnRefrescarTarifarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefrescarTarifarioActionPerformed
+        // TODO add your handling code here:
+        ListarDatosTarifa();
+    }//GEN-LAST:event_btnRefrescarTarifarioActionPerformed
+
+    private void btnBuscarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTodoActionPerformed
+        // TODO add your handling code here:
+        ListarAsistenciaDetalle("","");
+    }//GEN-LAST:event_btnBuscarTodoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1116,6 +1336,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton EnviarTodos;
     private javax.swing.JLabel LabelFondo1;
     private javax.swing.JLabel LabelFondo2;
     private javax.swing.JLabel LabelFondo3;
@@ -1143,6 +1364,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel PanelPlanilla;
     private javax.swing.JPanel PanelTarifario;
     private javax.swing.JPanel PanelTurno;
+    private javax.swing.JButton btnBuscarTodo;
+    private javax.swing.JButton btnRecargar;
+    private javax.swing.JButton btnRefrescarTarifario;
+    private javax.swing.JComboBox<String> cboAnioAsistencia;
+    private javax.swing.JComboBox<String> cboMesAsistencia;
     private javax.swing.JTable jAsistencia;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -1151,12 +1377,22 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox10;
+    private javax.swing.JComboBox<String> jComboBox11;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JComboBox<String> jComboBox8;
+    private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JButton jEliminarTarifa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1190,7 +1426,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jbNuevoTarifaDoc;
     private javax.swing.JButton jbTarifaDocEliminar;
     private javax.swing.JComboBox<String> jcAnio;
+    private javax.swing.JComboBox<String> jcAnio1;
     private javax.swing.JComboBox<String> jcMes;
+    private javax.swing.JLabel jlblBienviendo;
     private javax.swing.JTable jtBoleta;
     private javax.swing.JTable jtHorario;
     private javax.swing.JTable jtPersonal;

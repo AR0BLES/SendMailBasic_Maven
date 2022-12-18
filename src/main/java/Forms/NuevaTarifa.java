@@ -2,6 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+/*
+*Hecho por Alexis Robles
+*31/11/2022
+*Formulario para Logear al sistema
+ */
 package Forms;
 
 import Clases.Horario;
@@ -23,6 +28,7 @@ public class NuevaTarifa extends javax.swing.JFrame {
      */
     public NuevaTarifa() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
  conexion con= new conexion();
  Connection conectar=con.establecerConexion(); 

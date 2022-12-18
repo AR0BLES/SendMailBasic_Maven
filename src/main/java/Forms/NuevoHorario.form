@@ -218,7 +218,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+            <Component class="javax.swing.JCheckBox" name="jchkVie">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Viernes"/>
               </Properties>
@@ -228,7 +228,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+            <Component class="javax.swing.JCheckBox" name="jchkMie">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Miercoles"/>
               </Properties>
@@ -238,7 +238,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+            <Component class="javax.swing.JCheckBox" name="jchkLun">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Lunes"/>
               </Properties>
@@ -248,7 +248,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+            <Component class="javax.swing.JCheckBox" name="jchkTodos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Todos"/>
               </Properties>
@@ -258,7 +258,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+            <Component class="javax.swing.JCheckBox" name="jchkJue">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Jueves"/>
               </Properties>
@@ -268,7 +268,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+            <Component class="javax.swing.JCheckBox" name="jchkMar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Martes"/>
               </Properties>

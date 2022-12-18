@@ -2,6 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+/*
+*Hecho por Alexis Robles
+*31/11/2022
+*Formulario para Logear al sistema
+ */
 package Forms;
 
 /**
@@ -15,6 +20,7 @@ public class NuevaBoleta extends javax.swing.JFrame {
      */
     public NuevaBoleta() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**

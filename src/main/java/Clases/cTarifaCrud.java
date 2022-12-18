@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
  * @author apsenior
  */
 public class cTarifaCrud {
+    
     public  void insertarTarifa(Connection conexion, Tarifa tarifa){
     String sql ="INSERT INTO Tarifa VALUES (?,?,?);";
     try{
