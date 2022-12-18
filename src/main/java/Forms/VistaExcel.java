@@ -22,6 +22,7 @@ public class VistaExcel extends javax.swing.JFrame {
      */
     public VistaExcel() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
       conexion con= new conexion();
        Connection conectar=con.establecerConexion();    

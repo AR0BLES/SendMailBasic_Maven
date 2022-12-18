@@ -34,7 +34,6 @@ public class cHorarioCrud {
         int registroAdd=statement.executeUpdate();
         
         if (registroAdd>0){
-          System.out.println("OK");
           // JOptionPane.showMessageDialog(null,"Ok, Registro Correcto"); 
         }
         

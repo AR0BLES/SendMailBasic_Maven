@@ -24,6 +24,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**
@@ -94,7 +95,6 @@ public class Login extends javax.swing.JFrame {
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
         PanelFondo2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 343, 330, 10));
 
-        jpwClave.setText("jPasswordField2");
         jpwClave.setBorder(null);
         PanelFondo2.add(jpwClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 330, 40));
         PanelFondo2.add(jtextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 330, -1));
@@ -118,9 +118,16 @@ public class Login extends javax.swing.JFrame {
        if (VALOR==0){
             JOptionPane.showMessageDialog(null,"Usuario o clave erronea intentelo nuevamente"); 
         }
-       else{
+       else if (VALOR==1){
         //JOptionPane.showMessageDialog(null,"Ok Usuario Encontrado"); 
         Principal menu =new Principal();
+        menu.usuariologin(Usuario);
+       // FrmMenu menu =new FrmMenu();
+        menu.setVisible(true);
+        }
+        else if (VALOR==2){
+        //JOptionPane.showMessageDialog(null,"Ok Usuario Encontrado"); 
+        PrincipalDocente menu =new PrincipalDocente();
         menu.usuariologin(Usuario);
        // FrmMenu menu =new FrmMenu();
         menu.setVisible(true);

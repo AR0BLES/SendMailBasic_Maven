@@ -26,6 +26,7 @@ public class NuevoPersonal extends javax.swing.JFrame {
     String IdPersonal="";
     public NuevoPersonal() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
     void Tipo(String Tipo2){
        Tipo=Tipo2; 
@@ -228,10 +229,10 @@ public class NuevoPersonal extends javax.swing.JFrame {
                 .addGroup(PanelPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelCorreo)
                     .addComponent(jtextCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
-        PanelNuevoPersonal.add(PanelPersonales, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 360, 430));
+        PanelNuevoPersonal.add(PanelPersonales, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 360, 450));
 
         PanelBlanco2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -375,10 +376,10 @@ public class NuevoPersonal extends javax.swing.JFrame {
                 .addGroup(PanelAdministrativosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jcNivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
-        PanelNuevoPersonal.add(PanelAdministrativos, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 360, 430));
+        PanelNuevoPersonal.add(PanelAdministrativos, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 360, 450));
 
         jbGuardar.setText("GUARDAR");
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -386,7 +387,7 @@ public class NuevoPersonal extends javax.swing.JFrame {
                 jbGuardarActionPerformed(evt);
             }
         });
-        PanelNuevoPersonal.add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 590, 260, 40));
+        PanelNuevoPersonal.add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 610, 260, 40));
 
         jbLimpiar.setText("LIMPIAR TODO");
         jbLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -394,7 +395,7 @@ public class NuevoPersonal extends javax.swing.JFrame {
                 jbLimpiarActionPerformed(evt);
             }
         });
-        PanelNuevoPersonal.add(jbLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 540, 260, 40));
+        PanelNuevoPersonal.add(jbLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 560, 260, 40));
 
         LabelFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelNuevoPersonal.add(LabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 660));

@@ -28,6 +28,7 @@ public class NuevaTarifa extends javax.swing.JFrame {
      */
     public NuevaTarifa() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
  conexion con= new conexion();
  Connection conectar=con.establecerConexion(); 

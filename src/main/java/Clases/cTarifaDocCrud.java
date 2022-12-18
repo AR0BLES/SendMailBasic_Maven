@@ -28,7 +28,6 @@ public class cTarifaDocCrud {
         int registroAdd=statement.executeUpdate();
         
         if (registroAdd>0){
-          System.out.println("OK");
         //   JOptionPane.showMessageDialog(null,"Ok, Registro Correcto"); 
         }
         
@@ -47,7 +46,6 @@ public class cTarifaDocCrud {
             while(rs.next()){
              valor= rs.getInt(1);
             }
-             JOptionPane.showMessageDialog(null,"ok"+valor); 
             }catch(SQLException e){
              e.printStackTrace();
              JOptionPane.showMessageDialog(null,"error"+e.toString()+sql); 

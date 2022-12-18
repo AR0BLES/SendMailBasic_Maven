@@ -20,6 +20,7 @@ public class NuevaBoleta extends javax.swing.JFrame {
      */
     public NuevaBoleta() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**

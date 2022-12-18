@@ -25,6 +25,7 @@ public class NuevaTarifaDocente extends javax.swing.JFrame {
      */
     public NuevaTarifaDocente() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
     String CodigoDocente;
     String CodigoTarifa;

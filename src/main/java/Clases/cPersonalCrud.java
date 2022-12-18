@@ -38,8 +38,6 @@ public class cPersonalCrud {
         int registroAdd=statement.executeUpdate();
         
         if (registroAdd>0){
-          System.out.println("OK");
-           JOptionPane.showMessageDialog(null,"Ok, Registro Correcto"); 
         }
         
         }catch(SQLException e){
@@ -90,8 +88,7 @@ public class cPersonalCrud {
         }
     }
       
-       public  void UpdateActivo(Connection conexion, String IdUsuario){
-           
+       public  void UpdateActivo(Connection conexion, String IdUsuario){           
     try{
          CallableStatement cmd=conexion.prepareCall("{call SP_ACTUALIZAR_ACTIVO(?)}");
             cmd.setString(1, IdUsuario);

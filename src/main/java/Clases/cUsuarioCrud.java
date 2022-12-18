@@ -26,7 +26,7 @@ public class cUsuarioCrud {
         int registroAdd=statement.executeUpdate();
         
         if (registroAdd>0){
-          System.out.println("OK");
+          
         }
         
     }catch(SQLException e){
@@ -45,8 +45,6 @@ public class cUsuarioCrud {
             while(rs.next()){
              valor= rs.getInt(1);
             }
-          
-             JOptionPane.showMessageDialog(null,"ok"+valor); 
             }catch(SQLException e){
              e.printStackTrace();
              JOptionPane.showMessageDialog(null,"error"+e.toString()+sql); 
@@ -59,13 +57,13 @@ public class cUsuarioCrud {
     
    public  int ValidarLoginUsuario(Connection conexion,String Usuario,String Clave){
        Integer valor=0;
-       String sql="SELECT * FROM usuario WHERE Usuario='"+Usuario+"' AND Clave='"+Clave+"'";
+       String sql="SELECT CASE  Puesto WHEN 'Docente' THEN 2 ELSE 1 END AS Valor  FROM usuario U INNER JOIN PERSONAL P ON P.IdUsuario=U.ID_Usuario WHERE Usuario='"+Usuario+"' AND Clave='"+Clave+"'";
        
           try{
             Statement statement = conexion.createStatement();
             ResultSet rs= statement.executeQuery(sql);
              while(rs.next()){
-                 valor=valor+1;
+                 valor= rs.getInt(1);
             }
              
             }catch(SQLException e){

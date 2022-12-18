@@ -90,12 +90,13 @@ public class Principal extends javax.swing.JFrame {
     String CorreoDestinoBoleta;
     public Principal() {
         initComponents();
+         this.setLocationRelativeTo(null);
         //llamamos a las lista
         ListarDatos();
         ListarDatosHorario();
         ListarDatosTarifa();
         ListarDatosBoleta();
-        ListarAsistenciaDetalle();
+        ListarAsistenciaDetalle("","");
     }
            conexion con= new conexion();
        Connection conectar=con.establecerConexion();    
@@ -124,9 +125,9 @@ public class Principal extends javax.swing.JFrame {
        cBoletaCrud bc = new cBoletaCrud();
        jtBoleta.setModel(bc.ListarBoleta(conectar));
     }
-        void ListarAsistenciaDetalle(){
+        void ListarAsistenciaDetalle(String Anio,String Mes){
        cAsistenciaDetalleCrud p = new cAsistenciaDetalleCrud();
-       jAsistencia.setModel(p.ListarAsistenciaDetalle(conectar));
+       jAsistencia.setModel(p.ListarAsistenciaDetalle(conectar,Anio,Mes));
     }
       
     /**
@@ -179,13 +180,28 @@ public class Principal extends javax.swing.JFrame {
         PanelAsistencia = new javax.swing.JPanel();
         PanelLetrero3 = new javax.swing.JPanel();
         btnRecargar = new javax.swing.JButton();
+        cboAnioAsistencia = new javax.swing.JComboBox<>();
+        cboMesAsistencia = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        btnBuscarTodo = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jAsistencia = new javax.swing.JTable();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jButton8 = new javax.swing.JButton();
         LabelFondo4 = new javax.swing.JLabel();
         Letrero3 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        jcAnio1 = new javax.swing.JComboBox<>();
+        jComboBox7 = new javax.swing.JComboBox<>();
+        jComboBox8 = new javax.swing.JComboBox<>();
+        jComboBox9 = new javax.swing.JComboBox<>();
+        jComboBox10 = new javax.swing.JComboBox<>();
+        jComboBox11 = new javax.swing.JComboBox<>();
         PanelTarifario = new javax.swing.JPanel();
         PanelLetrero4 = new javax.swing.JPanel();
         Letrero4 = new javax.swing.JLabel();
@@ -545,10 +561,27 @@ public class Principal extends javax.swing.JFrame {
 
         PanelLetrero3.setBackground(new java.awt.Color(0, 2, 17));
 
-        btnRecargar.setText("Recargar");
+        btnRecargar.setText("Buscar");
         btnRecargar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRecargarActionPerformed(evt);
+            }
+        });
+
+        cboAnioAsistencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2022", "2023", "2024", "2025" }));
+
+        cboMesAsistencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Año:");
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Mes:");
+
+        btnBuscarTodo.setText("Buscar Todo");
+        btnBuscarTodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarTodoActionPerformed(evt);
             }
         });
 
@@ -557,16 +590,39 @@ public class Principal extends javax.swing.JFrame {
         PanelLetrero3Layout.setHorizontalGroup(
             PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLetrero3Layout.createSequentialGroup()
-                .addContainerGap(685, Short.MAX_VALUE)
-                .addComponent(btnRecargar)
-                .addGap(58, 58, 58))
+                .addGap(39, 39, 39)
+                .addGroup(PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cboAnioAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboMesAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnRecargar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBuscarTodo, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
+                .addContainerGap(372, Short.MAX_VALUE))
         );
         PanelLetrero3Layout.setVerticalGroup(
             PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLetrero3Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(btnRecargar)
-                .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLetrero3Layout.createSequentialGroup()
+                .addGroup(PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelLetrero3Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(PanelLetrero3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnRecargar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(PanelLetrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cboAnioAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboMesAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarTodo))
+                .addGap(13, 13, 13))
         );
 
         PanelAsistencia.add(PanelLetrero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 70));
@@ -591,10 +647,7 @@ public class Principal extends javax.swing.JFrame {
         jAsistencia.setRowHeight(40);
         jScrollPane3.setViewportView(jAsistencia);
 
-        PanelAsistencia.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 750, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
-        PanelAsistencia.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 130, -1));
+        PanelAsistencia.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 750, -1));
 
         jButton8.setText("Cargar");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -602,7 +655,7 @@ public class Principal extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        PanelAsistencia.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 540, 140, 40));
+        PanelAsistencia.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 550, 140, 40));
 
         LabelFondo4.setIcon(new javax.swing.ImageIcon("C:\\Users\\apsenior\\Downloads\\ProyectoCasiCasiFinal\\SendMailBasic_Maven-main\\src\\main\\java\\Imagenes\\ColegioCompleto.jpg")); // NOI18N
         PanelAsistencia.add(LabelFondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 640));
@@ -620,6 +673,39 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         PanelAsistencia.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 140, 40));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 130, -1));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 130, -1));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 130, -1));
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 130, -1));
+
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 130, -1));
+
+        jcAnio1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "2022", "2023", "2024", "2025", "2026" }));
+        PanelAsistencia.add(jcAnio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, -1));
+
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, -1));
+
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, -1));
+
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, -1));
+
+        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" }));
+        PanelAsistencia.add(jComboBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, -1));
 
         jTabbedPane1.addTab("Asistencia", PanelAsistencia);
 
@@ -1143,18 +1229,20 @@ public class Principal extends javax.swing.JFrame {
         ModeloExcel ModeloEX=new ModeloExcel();
         VistaExcel VistaEX=new VistaExcel();
         ControladorExcel ControlExcel=new ControladorExcel(VistaEX, ModeloEX);  
-        ListarAsistenciaDetalle();
+        ListarAsistenciaDetalle("","");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
-
+// Sirve para actualizar el boton de asistencia
     private void btnRecargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecargarActionPerformed
         // TODO add your handling code here:
-        ListarAsistenciaDetalle();
+        String Anio =String.valueOf(cboAnioAsistencia.getSelectedItem());
+        String  Mes=String.valueOf(cboMesAsistencia.getSelectedItem());
+        ListarAsistenciaDetalle(Anio,Mes);
     }//GEN-LAST:event_btnRecargarActionPerformed
-
+// Envío de boleta
     private void EnviarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarTodosActionPerformed
              if(jtBoleta.getRowCount()>0){
           for (int i=0;i<jtBoleta.getRowCount();i++){
@@ -1205,6 +1293,11 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         ListarDatosTarifa();
     }//GEN-LAST:event_btnRefrescarTarifarioActionPerformed
+
+    private void btnBuscarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTodoActionPerformed
+        // TODO add your handling code here:
+        ListarAsistenciaDetalle("","");
+    }//GEN-LAST:event_btnBuscarTodoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1271,8 +1364,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel PanelPlanilla;
     private javax.swing.JPanel PanelTarifario;
     private javax.swing.JPanel PanelTurno;
+    private javax.swing.JButton btnBuscarTodo;
     private javax.swing.JButton btnRecargar;
     private javax.swing.JButton btnRefrescarTarifario;
+    private javax.swing.JComboBox<String> cboAnioAsistencia;
+    private javax.swing.JComboBox<String> cboMesAsistencia;
     private javax.swing.JTable jAsistencia;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -1281,12 +1377,23 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox10;
+    private javax.swing.JComboBox<String> jComboBox11;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JComboBox<String> jComboBox8;
+    private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JButton jEliminarTarifa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
@@ -1319,6 +1426,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jbNuevoTarifaDoc;
     private javax.swing.JButton jbTarifaDocEliminar;
     private javax.swing.JComboBox<String> jcAnio;
+    private javax.swing.JComboBox<String> jcAnio1;
     private javax.swing.JComboBox<String> jcMes;
     private javax.swing.JLabel jlblBienviendo;
     private javax.swing.JTable jtBoleta;

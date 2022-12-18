@@ -51,8 +51,8 @@ public class cGenerarPdf2 {
             g.setFont(font2);
             g.setColor(Color.BLACK);
             
-             g.drawString("Colegio Villa Maria: ", 380, 50);
-            g.drawString("El pollito murio", 380, 60);
+             g.drawString("Colegio Villa América: ", 380, 50);
+            g.drawString("", 380, 60);
             
             //Columna 1
             g.drawString("Docente: ", 40, 150);
@@ -91,7 +91,8 @@ public class cGenerarPdf2 {
             int SueldoMes=Integer.parseInt(boleta.SueldoxHora)*Integer.parseInt(boleta.HorasDictadas);
             g.setFont(font2);
             g.setColor(Color.BLACK);
-            g.drawString("Sueldo Bruto: ", 40, 260);
+            g.drawString("Sueldo Base*: ", 40, 260);
+            g.drawString("*tarifa base por horas dictadas al mes ", 40, 700);
             g.drawString(String.valueOf(SueldoMes),140, 260);
             
                

@@ -28,6 +28,7 @@ public class NuevoHorario extends javax.swing.JFrame {
     String IdHorario;
     public NuevoHorario() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
  conexion con= new conexion();
  Connection conectar=con.establecerConexion(); 

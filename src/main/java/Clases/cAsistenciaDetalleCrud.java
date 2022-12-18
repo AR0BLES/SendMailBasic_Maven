@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class cAsistenciaDetalleCrud {
       public  void insertarAsistenciaDet(Connection conexion, AsistenciaDetalle asistenciadet){
-    String sql ="INSERT INTO AsistenciaDetalle VALUES (?,?,?,?,?,?,?,?,?,?,?,?);";
+    String sql ="{CALL SP_INSERTAR_ASISTENCIADETALLE(?,?,?,?,?,?,?,?,?,?,?,?)};";
     try{
         PreparedStatement statement= conexion.prepareStatement(sql);
         statement.setString(1, asistenciadet.codigo);
@@ -47,7 +48,9 @@ public class cAsistenciaDetalleCrud {
         }
     }
       
-      public  DefaultTableModel ListarAsistenciaDetalle(Connection conexion){
+      
+      
+      public  DefaultTableModel ListarAsistenciaDetalle(Connection conexion,String Anio, String Mes){
         DefaultTableModel modelo=new  DefaultTableModel();
         modelo.addColumn("Codigo");
         modelo.addColumn("Nombre");
@@ -63,7 +66,9 @@ public class cAsistenciaDetalleCrud {
              modelo.addColumn("Anio");
         
           try{
-            CallableStatement cmd=conexion.prepareCall("{CALL SP_LISTAR_ASISTENCIADETALLE}");
+            CallableStatement cmd=conexion.prepareCall("{CALL SP_LISTAR_ASISTENCIADETALLE(?,?)}");
+            cmd.setString(1,Anio);
+            cmd.setString(2, Mes);
             ResultSet rs= cmd.executeQuery();
             while(rs.next()){
                Object dato []= new Object[12];
@@ -79,5 +84,6 @@ public class cAsistenciaDetalleCrud {
             }
    return modelo;        
    } 
-
+      
+ 
 }
